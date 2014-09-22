@@ -1,0 +1,22 @@
+M:\My Documents\Koala Karts\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+M:\My Documents\Koala Karts\Temp\bin\Debug\UnityEditor.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\UnityEngine.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\Mono.Cecil.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\nunit.framework.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\Unity.DataContract.dll
+M:\My Documents\Koala Karts\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+M:\My Documents\Koala Karts\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+M:\My Documents\Koala Karts\obj\Debug\Assembly-CSharp-firstpass.dll
+M:\My Documents\Koala Karts\obj\Debug\Assembly-CSharp-firstpass.pdb
+F:\Koala Karts\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+F:\Koala Karts\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+F:\Koala Karts\Temp\bin\Debug\UnityEditor.dll
+F:\Koala Karts\Temp\bin\Debug\UnityEngine.dll
+F:\Koala Karts\Temp\bin\Debug\Mono.Cecil.dll
+F:\Koala Karts\Temp\bin\Debug\nunit.framework.dll
+F:\Koala Karts\Temp\bin\Debug\Unity.DataContract.dll
+F:\Koala Karts\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\Koala Karts\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+F:\Koala Karts\obj\Debug\Assembly-CSharp-firstpass.dll
+F:\Koala Karts\obj\Debug\Assembly-CSharp-firstpass.pdb
