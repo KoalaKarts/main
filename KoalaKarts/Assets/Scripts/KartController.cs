@@ -121,9 +121,6 @@ public class KartController : MonoBehaviour
 
 	void FixedUpdate ()
     {
-        transform.rotation.x = Mathf.Clamp(transform.rotation.x, -45.0f, 45.0f);
-
-
         if (Input.GetButtonUp(buttonHover) && currentSpeed == 0.0f)
         {
             ToggleHoverMode();
