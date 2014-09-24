@@ -2,29 +2,42 @@
 using System.Collections;
 
 public class RacingAI : MonoBehaviour {
-	//where the ai goes to when finding enemy
+	public KartController kc;
+	public KartHealth kh;
+
+	//where the ai goes to when finding enemy, overall node stuff
 	public GameObject node1;
 	public GameObject node2;
 	public GameObject node3;
 	public GameObject node4;
+	public GameObject node5;
+	public GameObject node6;
+	public GameObject node7;
+	public GameObject node8;
+	public GameObject node9;
+	private Vector3 nodeStart;
+	private Vector3 nodeEnd;
 	public int nodeNum;
-	//public GameObject[] nodeArr = GameObject.FindGameObjectsWithTag("node");
+	public GameObject[] nodeArr;
 	//lower the number = go to first
 	public int nodePriority = 1; 
+	//range of nodes which will allow the ai to do certain actions based on what is nearby, need to word better and need to look into more
 	public int nodeRange;
+	//node the ai will go to, testing with this for now
+	public GameObject nodeTar;
 
 	//weapon(s) that this character is holding
 	public GameObject weapon;
 	//other players
 	public GameObject enemy;
 	//targetted enemy
-	public Transform target; 
+	public Transform target;
 
 	private Vector3 dir;
-	public float speed = 5.0f;
-	public int maxDistance = 1;
-	public int hp;
-	public int leaves;
+	public float speed = 0.5f;
+	//public float speed = kc.GetComponent(speed);
+	public float maxDistance = 1.0f;
+	//public int hp = kh.GetComponent (leaves);
 	
 	private bool enemyFound = false;
 	private bool hasWeapon = false;
@@ -36,8 +49,11 @@ public class RacingAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//creates the nodes, each with a different priority number (e.g 1 = go to first, 2 = go to second, etc.)
+		//puts the nodes into the nodeArr, not sure if needed
+		//nodeArr = GameObject.FindGameObjectsWithTag ("node");
+		//for(int i = 0; i < nodeArr.Length; i++){
 
+		//}
 	}
 	
 	// Update is called once per frame
@@ -58,11 +74,14 @@ public class RacingAI : MonoBehaviour {
 		}
 	}
 
-	//moves towards node to see if an enemy is within a certain range of the targetted node
+	//moves towards node
 	void findEnemy(){
-		transform.position = Vector3.MoveTowards (transform.position, node1.transform.position, speed * Time.deltaTime);	
-		if(transform.position == node1.transform.position){
-			transform.position = Vector3.MoveTowards (transform.position, node2.transform.position, speed * Time.deltaTime);	
+		nodeTar = node1;
+		transform.position = Vector3.MoveTowards (transform.position, nodeTar.transform.position, speed * Time.deltaTime);	
+		if(transform.position.x == nodeTar.transform.position.x){
+			nodeTar = node2;
+			//Destroy (node1); //ai will still move towards node1 even if node1 is destroyed
+			transform.position = Vector3.MoveTowards (transform.position, nodeTar.transform.position, speed * Time.deltaTime);	
 		}
 	}
 
@@ -73,21 +92,25 @@ public class RacingAI : MonoBehaviour {
 	void useWeapon(){
 
 	}
+
+	void runAway(){
+
+	}
+
+	void kartTransition(){
+
+	}
+
 	/*MANDATORY AI:
-	 * turn-might be its own function or not
-	 * drifting-
-	 * kart transition-
-	 */
-	/*AI ARCHETYPES AND FUNCTIONS (Highest Priority):
 	 * chase- will chase an enemy in the shortest path possible
 	 * find enemy-will go in a predetermined path to different areas of each level trying to find enemies
 	 * run away-drive away as fast as possible if low on health
-	 * wall follow-same as find enemy except it follows walls instead
-	 * obstacle follow-same as find enemy except goes to nearby objects instead of a predetermined path
-	 * combat-for trying to kill the enemy
 	 * use weapon- just uses the weapon
 	 * find weapon-searches around for a weapon
 	 * move to next node-need to implement somehow
+	 * turn-might be its own function or not
+	 * drifting-
+	 * kart transition-
 	 */
 
 	/*
