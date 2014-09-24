@@ -25611,7 +25611,7 @@ GameObject:
   - 82: {fileID: 1127902770}
   m_Layer: 0
   m_Name: PlayerTwoKart
-  m_TagString: Untagged
+  m_TagString: Kart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38592,7 +38592,7 @@ GameObject:
   - 82: {fileID: 1671151635}
   m_Layer: 0
   m_Name: PlayerOneKart
-  m_TagString: Untagged
+  m_TagString: Kart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

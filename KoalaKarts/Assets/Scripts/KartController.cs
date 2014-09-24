@@ -121,14 +121,8 @@ public class KartController : MonoBehaviour
 
 	void FixedUpdate ()
     {
-        /*if (!Physics.Raycast(transform.position, Vector3.down, 1.2f))
-        {
-            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        }
-        else
-        {
-            rigidbody.constraints = RigidbodyConstraints.None;
-        }*/
+        transform.rotation.x = Mathf.Clamp(transform.rotation.x, -45.0f, 45.0f);
+
 
         if (Input.GetButtonUp(buttonHover) && currentSpeed == 0.0f)
         {
@@ -462,6 +456,18 @@ public class KartController : MonoBehaviour
         {
             currentItem = item;
         }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Kart")
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Kart")
+            rigidbody.constraints = RigidbodyConstraints.None;
     }
 
     void OnTriggerEnter(Collider other)
