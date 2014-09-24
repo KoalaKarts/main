@@ -12083,6 +12083,7 @@ MonoBehaviour:
   m_LightmapIndex: -1
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
+  m_CollectDetailPatches: 1
   m_MaterialTemplate: {fileID: 0}
 --- !u!4 &526809423
 Transform:
@@ -24418,23 +24419,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kc: {fileID: 0}
   kh: {fileID: 0}
-  node1: {fileID: 1996345371}
-  node2: {fileID: 27009462}
-  node3: {fileID: 2111116863}
-  node4: {fileID: 1497382739}
-  node5: {fileID: 1494466472}
-  node6: {fileID: 448669564}
-  node7: {fileID: 146338106}
-  node8: {fileID: 384672913}
-  node9: {fileID: 24228466}
-  nodeNum: 0
-  nodePriority: 1
-  nodeRange: 0
-  weapon: {fileID: 0}
+  nodeArr:
+  - {fileID: 1996345375}
+  - {fileID: 27009466}
+  - {fileID: 2111116867}
+  - {fileID: 1497382743}
+  - {fileID: 1494466476}
+  - {fileID: 448669568}
+  - {fileID: 146338110}
+  - {fileID: 384672917}
+  - {fileID: 24228470}
+  weapon: {fileID: 1437070254}
   enemy: {fileID: 0}
   target: {fileID: 0}
   speed: 5
-  maxDistance: 1
+  minDistance: 2
 --- !u!23 &1018765672
 Renderer:
   m_ObjectHideFlags: 0
@@ -46332,7 +46331,7 @@ SphereCollider:
   m_GameObject: {fileID: 1996345371}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
