@@ -13,6 +13,11 @@ UnityGenerated/
 Library/
 Assets/AssetStoreTools*
 
+# =================== #
+# Build Related Files #
+# =================== #
+KoalaKarts/Builds/*/output_log.txt
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
