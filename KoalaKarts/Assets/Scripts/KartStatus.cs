@@ -8,10 +8,12 @@ using System.Collections;
 public class KartStatus : MonoBehaviour
 {
     private int lives = 3;
-    private int hits = 0;
+    private int hits = 3;
     private int currentPoints = 0;
     private int currentLeaves = 0;
     private int bankedLeaves = 0;
+
+    private int leafPointValue = 100;
 
     #region Getters
 
@@ -22,6 +24,15 @@ public class KartStatus : MonoBehaviour
     public int GetLives()
     {
         return lives;
+    }
+
+    /// <summary>
+    /// Getter for remaining hits.
+    /// </summary>
+    /// <returns> Remaining Hits </returns>
+    public int GetHits()
+    {
+        return hits;
     }
 
     /// <summary>
@@ -53,7 +64,7 @@ public class KartStatus : MonoBehaviour
 
     #endregion
 
-    #region Lives
+    #region Lives & Hits
 
     /// <summary>
     /// Add life to kart.
@@ -61,6 +72,7 @@ public class KartStatus : MonoBehaviour
     public void AddLife()
     {
         lives++;
+        PrintDebug();
     }
 
     /// <summary>
@@ -70,8 +82,13 @@ public class KartStatus : MonoBehaviour
     public void SubtractLife()
     {
         lives--;
+
         if (lives == 0)
             OnDeath();
+        else
+            Respawn();
+
+        PrintDebug();
     }
 
     /// <summary>
@@ -85,6 +102,15 @@ public class KartStatus : MonoBehaviour
         {
             SubtractLife();
         }
+        PrintDebug();
+    }
+
+    /// <summary>
+    /// Respawn player.
+    /// </summary>
+    void Respawn()
+    {
+
     }
 
     /// <summary>
@@ -105,6 +131,7 @@ public class KartStatus : MonoBehaviour
     public void AddLeaf()
     {
         currentLeaves++;
+        PrintDebug();
     }
 
     /// <summary>
@@ -115,6 +142,7 @@ public class KartStatus : MonoBehaviour
     public void AddLeaves(int leaves)
     {
         currentLeaves += leaves;
+        PrintDebug();
     }
 
     /// <summary>
@@ -123,6 +151,7 @@ public class KartStatus : MonoBehaviour
     public void SubtractLeaf()
     {
         currentLeaves--;
+        PrintDebug();
     }
 
     /// <summary>
@@ -133,6 +162,7 @@ public class KartStatus : MonoBehaviour
     public void SubtractLeaves(int leaves)
     {
         currentLeaves -= leaves;
+        PrintDebug();
     }
 
     /// <summary>
@@ -141,7 +171,9 @@ public class KartStatus : MonoBehaviour
     public void BankLeaves()
     {
         bankedLeaves += currentLeaves;
+        AddPoints(currentLeaves * leafPointValue);
         currentLeaves = 0;
+        PrintDebug();
     }
 
     #endregion
@@ -154,6 +186,7 @@ public class KartStatus : MonoBehaviour
     public void AddPoint()
     {
         currentPoints++;
+        PrintDebug();
     }
 
     /// <summary>
@@ -164,6 +197,7 @@ public class KartStatus : MonoBehaviour
     public void AddPoints(int points)
     {
         currentPoints += points;
+        PrintDebug();
     }
 
     /// <summary>
@@ -172,6 +206,7 @@ public class KartStatus : MonoBehaviour
     public void SubtractPoint()
     {
         currentPoints--;
+        PrintDebug();
     }
 
     /// <summary>
@@ -182,6 +217,23 @@ public class KartStatus : MonoBehaviour
     public void SubtractPoints(int points)
     {
         currentPoints -= points;
+        PrintDebug();
+    }
+
+    #endregion
+
+    #region Debug
+
+    /// <summary>
+    /// Method for printing current values.
+    /// </summary>
+    private void PrintDebug()
+    {
+        Debug.Log("Remaining Hits: " + GetHits());
+        Debug.Log("Current Lives: " + GetLives());
+        Debug.Log("Current Points: " + GetCurrentPoints());
+        Debug.Log("Current Leaves: " + GetCurrentLeaves());
+        Debug.Log("Banked Leaves: " + GetBankedLeaves());
     }
 
     #endregion

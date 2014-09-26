@@ -203,22 +203,22 @@ public class KartController : MonoBehaviour
 
     void Update()
     {
-		if (Input.GetButtonDown (buttonFire))
-		{
-			UseItem();
-		}
+        if (Input.GetButtonDown(buttonFire))
+        {
+            UseItem();
+        }
 
-		if (boostEnabled)
-		{
-			if (speedBoostTimer > 0)
-			{
-				speedBoostTimer -= Time.deltaTime;
-			}
-			else
-			{
-				DisableSpeedBoost();
-			}
-		}
+        if (boostEnabled)
+        {
+            if (speedBoostTimer > 0)
+            {
+                speedBoostTimer -= Time.deltaTime;
+            }
+            else
+            {
+                DisableSpeedBoost();
+            }
+        }
 
         if (shieldEnabled)
         {
@@ -395,53 +395,6 @@ public class KartController : MonoBehaviour
         Destroy(transform.Find("Shield").gameObject);
     }
 
-    /*
-    public void SubtractLife()
-    {
-        if (lives > 1)
-        {
-            lives--;
-
-            if (lives == 2)
-            {
-                Destroy(transform.Find("LifeLeaf2").gameObject);
-            }
-
-            if (lives == 1)
-            {
-                Destroy(transform.Find("LifeLeaf1").gameObject);
-            }
-        }
-        else
-        {
-            Die();
-        }
-    }
-
-    void AddLife()
-    {
-        if (lives < maxLives)
-        {
-            lives++;
-
-            if (lives == 2)
-            {
-                GameObject leaf;
-                leaf = (GameObject)Instantiate(LifeLeaf1, transform.position, transform.rotation);
-                leaf.transform.parent = transform;
-                leaf.name = "LifeLeaf1";
-            }
-
-            if (lives == 3)
-            {
-                GameObject leaf;
-                leaf = (GameObject)Instantiate(LifeLeaf2, transform.position, transform.rotation);
-                leaf.transform.parent = transform;
-                leaf.name = "LifeLeaf2";
-            }
-        }
-    }*/
-
     void Die()
     {
         Application.LoadLevel("Menus");
@@ -463,6 +416,13 @@ public class KartController : MonoBehaviour
     {
         if (col.gameObject.tag == "Kart")
             rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        if (col.gameObject.name == "Bank")
+        {
+            kartStatus.BankLeaves();
+            Instantiate(Explosion, col.transform.position, col.transform.rotation);
+            rigidbody.AddForce(new Vector3(0, 0, rigidbody.velocity.z * 5000 * -1), ForceMode.Impulse);
+        }
     }
 
     void OnCollisionExit(Collision col)
@@ -477,11 +437,9 @@ public class KartController : MonoBehaviour
         {
             if (!shieldEnabled && !hoverEnabled)
             {
-                kartStatus.SubtractLife();
                 Instantiate(Explosion, other.transform.position, other.transform.rotation);
                 rigidbody.AddExplosionForce(500000.0f, other.transform.position, 30.0f, 5.0f);
                 rigidbody.AddTorque(Vector3.up * 10000000.0f);
-                Destroy(other.gameObject);
             }
         }
     }
@@ -493,6 +451,12 @@ public class KartController : MonoBehaviour
             Destroy(other.gameObject);
             kartStatus.AddLeaf();
             healthPickupAudio.Play();
+        }
+
+        if (other.gameObject.name == "Mine")
+        {
+            Destroy(other.gameObject);
+            kartStatus.Hit();
         }
 
         /*if (other.gameObject.name == "SpeedBoost")
