@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
-
     public float ProjectileSpeed = 50;
     public GameObject Explosion;
 
@@ -30,7 +29,7 @@ public class Projectile : MonoBehaviour
             Instantiate(Explosion, pos, rot);
             if (!kart.shieldEnabled)
             {
-                kart.SubtractLife();
+                kart.kartStatus.SubtractLife();
                 col.rigidbody.AddExplosionForce(500000.0f, contact.point, 10.0f, 10000.0f);
                 col.rigidbody.AddTorque(Vector3.up * 10000000.0f);
             }

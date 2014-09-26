@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RacingAI : MonoBehaviour {
 	public KartController kc;
-	public KartHealth kh;
+	public KartStatus kh;
 	public ItemSpawner its;
 
 	/*NODE STUFF*/

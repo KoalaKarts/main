@@ -12083,7 +12083,6 @@ MonoBehaviour:
   m_LightmapIndex: -1
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
-  m_CollectDetailPatches: 1
   m_MaterialTemplate: {fileID: 0}
 --- !u!4 &526809423
 Transform:
@@ -24419,6 +24418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kc: {fileID: 0}
   kh: {fileID: 0}
+  its: {fileID: 0}
   nodeArr:
   - {fileID: 1996345375}
   - {fileID: 27009466}
@@ -24429,11 +24429,10 @@ MonoBehaviour:
   - {fileID: 146338110}
   - {fileID: 384672917}
   - {fileID: 24228470}
-  weapon: {fileID: 1437070254}
-  enemy: {fileID: 0}
-  target: {fileID: 0}
   speed: 5
   minDistance: 2
+  enemy: {fileID: 0}
+  target: {fileID: 0}
 --- !u!23 &1018765672
 Renderer:
   m_ObjectHideFlags: 0
@@ -26053,6 +26052,7 @@ GameObject:
   - 82: {fileID: 1127902772}
   - 82: {fileID: 1127902771}
   - 82: {fileID: 1127902770}
+  - 114: {fileID: 1127902773}
   m_Layer: 0
   m_Name: PlayerTwoKart
   m_TagString: Kart
@@ -26155,8 +26155,6 @@ MonoBehaviour:
   wheelFRTransform: {fileID: 1719796624}
   wheelRLTransform: {fileID: 1797043307}
   wheelRRTransform: {fileID: 1895845957}
-  lives: 1
-  maxLives: 3
   currentItem: 0
   enginePower: 80
   maxSteer: 20
@@ -26187,6 +26185,7 @@ MonoBehaviour:
   healthPickupAudio: {fileID: 1127902772}
   shieldPickupAudio: {fileID: 1127902771}
   speedBoostAudio: {fileID: 1127902770}
+  kartStatus: {fileID: 0}
 --- !u!54 &1127902762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26464,6 +26463,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1127902773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127902758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0075833a3f5dfe4fa282abce46b98eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1131923624
 GameObject:
   m_ObjectHideFlags: 0
@@ -39172,6 +39182,7 @@ GameObject:
   - 82: {fileID: 1671151637}
   - 82: {fileID: 1671151636}
   - 82: {fileID: 1671151635}
+  - 114: {fileID: 1671151638}
   m_Layer: 0
   m_Name: PlayerOneKart
   m_TagString: Kart
@@ -39362,8 +39373,6 @@ MonoBehaviour:
   wheelFRTransform: {fileID: 1495796432}
   wheelRLTransform: {fileID: 2113357929}
   wheelRRTransform: {fileID: 112437446}
-  lives: 1
-  maxLives: 3
   currentItem: 0
   enginePower: 80
   maxSteer: 20
@@ -39394,6 +39403,7 @@ MonoBehaviour:
   healthPickupAudio: {fileID: 1671151637}
   shieldPickupAudio: {fileID: 1671151636}
   speedBoostAudio: {fileID: 1671151635}
+  kartStatus: {fileID: 0}
 --- !u!54 &1671151634
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39583,6 +39593,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1671151638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1671151623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0075833a3f5dfe4fa282abce46b98eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1672354212
 Prefab:
   m_ObjectHideFlags: 0

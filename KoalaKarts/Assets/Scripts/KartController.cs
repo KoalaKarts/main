@@ -16,8 +16,8 @@ public class KartController : MonoBehaviour
     public Transform wheelRLTransform;
     public Transform wheelRRTransform;
 
-    public int lives = 3;
-    public int maxLives = 5;
+    //public int lives = 3;
+    //public int maxLives = 5;
     public Item currentItem = Item.Rocket;
 
     public float enginePower = 80.0f;
@@ -73,6 +73,8 @@ public class KartController : MonoBehaviour
     public AudioSource shieldPickupAudio;
     public AudioSource speedBoostAudio;
 
+    public KartStatus kartStatus;
+
     public enum Item
     {
         NULL,
@@ -89,6 +91,7 @@ public class KartController : MonoBehaviour
         SetPlayer();
         rigidbody.centerOfMass = new Vector3(0, -1f, 0);
         SetValues();
+        kartStatus = GetComponent<KartStatus>();
 	}
 
     void SetPlayer()
@@ -392,6 +395,7 @@ public class KartController : MonoBehaviour
         Destroy(transform.Find("Shield").gameObject);
     }
 
+    /*
     public void SubtractLife()
     {
         if (lives > 1)
@@ -436,7 +440,7 @@ public class KartController : MonoBehaviour
                 leaf.name = "LifeLeaf2";
             }
         }
-    }
+    }*/
 
     void Die()
     {
@@ -447,7 +451,7 @@ public class KartController : MonoBehaviour
     {
         if (item == Item.Leaf)
         {
-            AddLife();
+            kartStatus.AddLeaf();
         }
         else if(currentItem == Item.NULL)
         {
@@ -473,7 +477,7 @@ public class KartController : MonoBehaviour
         {
             if (!shieldEnabled && !hoverEnabled)
             {
-                SubtractLife();
+                kartStatus.SubtractLife();
                 Instantiate(Explosion, other.transform.position, other.transform.rotation);
                 rigidbody.AddExplosionForce(500000.0f, other.transform.position, 30.0f, 5.0f);
                 rigidbody.AddTorque(Vector3.up * 10000000.0f);
@@ -487,7 +491,7 @@ public class KartController : MonoBehaviour
         if (other.gameObject.name == "Health Leaf")
         {
             Destroy(other.gameObject);
-            AddLife();
+            kartStatus.AddLeaf();
             healthPickupAudio.Play();
         }
 

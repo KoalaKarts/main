@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KartHealth : MonoBehaviour
+/// <summary>
+/// Script for keeping track of lives,
+/// hits, points, and leaves.
+/// </summary>
+public class KartStatus : MonoBehaviour
 {
     private int lives = 3;
     private int hits = 0;
@@ -49,7 +53,7 @@ public class KartHealth : MonoBehaviour
 
     #endregion
 
-    #region Lives & Hits
+    #region Lives
 
     /// <summary>
     /// Add life to kart.
@@ -88,7 +92,7 @@ public class KartHealth : MonoBehaviour
     /// </summary>
     void OnDeath()
     {
-        // TODO: Handle death
+        Application.LoadLevel("Menus");
     }
 
     #endregion
@@ -129,6 +133,15 @@ public class KartHealth : MonoBehaviour
     public void SubtractLeaves(int leaves)
     {
         currentLeaves -= leaves;
+    }
+
+    /// <summary>
+    /// Bank all current leaves.
+    /// </summary>
+    public void BankLeaves()
+    {
+        bankedLeaves += currentLeaves;
+        currentLeaves = 0;
     }
 
     #endregion
@@ -172,13 +185,4 @@ public class KartHealth : MonoBehaviour
     }
 
     #endregion
-
-    /// <summary>
-    /// Bank all current leaves.
-    /// </summary>
-    public void BankLeaves()
-    {
-        bankedLeaves += currentLeaves;
-        currentLeaves = 0;
-    }
 }
