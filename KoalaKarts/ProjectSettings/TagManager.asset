@@ -6,6 +6,8 @@ TagManager:
   - Rocket
   - Kart
   - Node
+  - ItemSpawn
+  - AI
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
