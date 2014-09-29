@@ -94,6 +94,15 @@ public class KartController : MonoBehaviour
         kartStatus = GetComponent<KartStatus>();
 	}
 
+    void OnGUI()
+    {
+        if (playerNumber == 1)
+        {
+            GUI.Label(new Rect(10, 10, 100, 20), "Leaves: " + kartStatus.GetCurrentLeaves());
+            GUI.Label(new Rect(10, 30, 100, 20), "Points: " + kartStatus.GetCurrentPoints());
+        }
+    }
+
     void SetPlayer()
     {
         if (playerNumber == 1)

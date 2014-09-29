@@ -13,7 +13,7 @@ public class KartStatus : MonoBehaviour
     private int currentLeaves = 0;
     private int bankedLeaves = 0;
     private int leafPointValue = 100;
-    
+
     private Vector3 respawnPoint;
     private Quaternion respawnRotation;
     private float respawnTimer;
