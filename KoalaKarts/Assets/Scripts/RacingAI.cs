@@ -27,18 +27,25 @@ public class RacingAI : MonoBehaviour {
 	//players
 	public GameObject[] playerEnemies;
 	public GameObject[] enemies;
-	//targetted enemy
-	public Transform target;
+	//targetted enemy, closest enemy, or favorable enemy to take out
+	public Transform[] target;
+	private GameObject enemy;
 
 	/*AI ATTRIBUTES*/
 	private Vector3 dir;
 	public float speed = 0.2f;
-	public float fov;//field of vision/view
+	public float fovRange = 10.0f;//field of vision/view
+	public Quaternion startAngle = Quaternion.AngleAxis (-60, Vector3.up);
+	public Quaternion endAngle = Quaternion.AngleAxis (5, Vector3.up);
+
 	//public float speed = kc.GetComponent(speed);
 	//public int hp = kh.GetComponent (leaves);
 	//public int lives = kh.GetComponent();
 
-
+	/*FIELD OF VISION*/
+	float totalFOV = 70.0f;
+	float rayRange = 100.0f;
+	
 	void Start () {
 		currNode = nodeArr [0];
 		nodeNum = 0;
@@ -52,19 +59,21 @@ public class RacingAI : MonoBehaviour {
 	}
 
 	void Update () {
+		aiVision ();
+
 		//searches for a nearby weapon
 		if(!enemyFound && !hasWeapon){
 			findWeapon();
 		}
 
-		//uses weapon on target
-		if(enemyFound && enemyInRange && hasWeapon){
-			//useWeapon();
-		}
-
 		//chases an enemy that is in range so that the  AI can use the weapon
 		if(enemyFound && !enemyInRange && hasWeapon){
 			//chase();
+		}
+
+		//uses weapon on target
+		if(enemyFound && enemyInRange && hasWeapon){
+			//useWeapon();
 		}
 
 		if(!enemyFound && hasWeapon){// keep hasWeapon false for now, weapons aren't in yet/doesn't work or something
@@ -115,11 +124,48 @@ public class RacingAI : MonoBehaviour {
 
 	}
 
-	void aiVision(){//will need raycast for this
+	//ai's field of vision...not sure if this works or not yet, will probably need to modify
+	void aiVision(){
+		//OnDrawGizmosSelected ();
+
 		RaycastHit hit;
+		Quaternion angle = transform.rotation * startAngle;
+		Vector3 dire = angle * Vector3.forward;
+		Vector3 pos = transform.position;
+		for(int i = 0; i < 24; i++){
+			//Debug.DrawLine (enemy.position, transform.position, Color.red);
+
+			if(Physics.Raycast (pos, dire, out hit, 500)){
+				Enemy enemy = hit.collider.GetComponent<Enemy>();
+				if(enemy){
+					enemyFound = true;
+				}
+			}
+		}
 	}
 
-	void foundEnemy(){
+	//shows the field of vision???
+	void OnDrawGizmosSelected(){
+		float halfFOV = totalFOV / 2.0f;
+		float quarterFOV = totalFOV / 4.0f; //for enemyInRange
+
+		Quaternion leftRayRot = Quaternion.AngleAxis (-halfFOV, Vector3.up);
+		Quaternion quarLeftRayRot = Quaternion.AngleAxis (-quarterFOV, Vector3.up);
+		Quaternion rightRayRot = Quaternion.AngleAxis (halfFOV, Vector3.up);
+		Quaternion quarRightRayRot = Quaternion.AngleAxis (quarterFOV, Vector3.up);
+
+		Vector3 leftRayDir = leftRayRot * transform.forward;
+		Vector3 quarLeftRayDir = quarLeftRayRot * transform.forward;
+		Vector3 rightRayDir = rightRayRot * transform.forward;
+		Vector3 quarRightRayDir = quarRightRayRot * transform.forward;
+
+		Gizmos.color = Color.blue;
+		Gizmos.DrawRay (transform.position, leftRayDir * rayRange);
+		Gizmos.DrawRay (transform.position, rightRayDir * rayRange);
+
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawRay (transform.position, quarLeftRayDir * rayRange / 1.5f);
+		Gizmos.DrawRay (transform.position, quarRightRayDir * rayRange / 1.5f);
 	}
 
 	GameObject findClosestItemSpawn(){
