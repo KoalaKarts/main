@@ -420,8 +420,8 @@ public class KartController : MonoBehaviour
         if (col.gameObject.name == "Bank")
         {
             kartStatus.BankLeaves();
-            Instantiate(Explosion, col.transform.position, col.transform.rotation);
-            rigidbody.AddForce(new Vector3(0, 0, rigidbody.velocity.z * 5000 * -1), ForceMode.Impulse);
+            //Instantiate(Explosion, col.transform.position, col.transform.rotation);
+            //rigidbody.AddForce(new Vector3(0, 0, rigidbody.velocity.z * 5000 * -1), ForceMode.Impulse);
         }
     }
 

@@ -23584,8 +23584,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 50
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -24448,7 +24448,9 @@ MonoBehaviour:
   closestItem: {fileID: 0}
   enemyFound: 0
   enemyInRange: 0
-  enemy: {fileID: 0}
+  aiEnemies: []
+  playerEnemies: []
+  enemies: []
   target: {fileID: 0}
   speed: 5
   fov: 0
@@ -26840,8 +26842,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 50
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -39392,7 +39394,7 @@ MonoBehaviour:
   wheelFRTransform: {fileID: 1495796432}
   wheelRLTransform: {fileID: 2113357929}
   wheelRRTransform: {fileID: 112437446}
-  currentItem: 4
+  currentItem: 3
   enginePower: 80
   maxSteer: 20
   power: 0

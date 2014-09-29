@@ -12,8 +12,45 @@ public class KartStatus : MonoBehaviour
     private int currentPoints = 0;
     private int currentLeaves = 0;
     private int bankedLeaves = 0;
-
     private int leafPointValue = 100;
+    
+    private Vector3 respawnPoint;
+    private Quaternion respawnRotation;
+    private float respawnTimer;
+    private float respawnTime = 2;
+    private bool respawning = false;
+
+    #region Initialization & Update
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
+    void Start()
+    {
+        respawnPoint = transform.position;
+        respawnRotation = transform.rotation;
+        respawnTimer = respawnTime;
+    }
+
+    void Update()
+    {
+        if (respawning)
+        {
+            if (respawnTimer > 0)
+            {
+                respawnTimer -= Time.deltaTime;
+                if (respawnTimer < 0.5f)
+                    rigidbody.velocity = Vector3.zero;
+            }
+            else
+            {
+                Respawn();
+                respawnTimer = respawnTime;
+            }
+        }
+    }
+
+    #endregion
 
     #region Getters
 
@@ -86,7 +123,7 @@ public class KartStatus : MonoBehaviour
         if (lives == 0)
             OnDeath();
         else
-            Respawn();
+            respawning = true;
 
         PrintDebug();
     }
@@ -110,7 +147,13 @@ public class KartStatus : MonoBehaviour
     /// </summary>
     void Respawn()
     {
-
+        hits = 3;
+        currentLeaves = 0;
+        transform.position = respawnPoint;
+        transform.rotation = respawnRotation;
+        respawning = false;
+        Debug.Log("RepawnPoint: " + respawnPoint);
+        Debug.Log("TPosition: " + transform.position);
     }
 
     /// <summary>
