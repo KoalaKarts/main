@@ -42,8 +42,7 @@ public class Menus : MonoBehaviour {
 				
 				if(selected.name == "OPlay")
 				{
-					menuCamera.transform.Rotate(90, 0, 0);
-					menuCamera.transform.Rotate(0, 90, 0);
+					Application.LoadLevel("OnlineMenus");
 					clickAudio.Play();
 				}
 				
