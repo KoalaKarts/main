@@ -9,13 +9,13 @@ public class Projectile : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        transform.Rotate(90, 0, 0, Space.Self);
+        transform.Rotate(0, -90, 0, Space.Self);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * ProjectileSpeed);
+        transform.Translate(Vector3.right * ProjectileSpeed);
     }
 
     void OnCollisionEnter(Collision col)

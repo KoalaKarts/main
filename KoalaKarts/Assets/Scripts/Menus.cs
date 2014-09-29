@@ -27,6 +27,24 @@ public class Menus : MonoBehaviour {
 					menuCamera.transform.Rotate(0, 90, 0);
 					clickAudio.Play();
 				}
+
+				if(selected.name == "Online")
+				{
+					menuCamera.transform.Rotate(-90, 0, 0);
+					clickAudio.Play();
+				}
+				
+				if(selected.name == "Return")
+				{
+					menuCamera.transform.Rotate(90, 0, 0);
+					clickAudio.Play();
+				}
+				
+				if(selected.name == "OPlay")
+				{
+					Application.LoadLevel("OnlineMenus");
+					clickAudio.Play();
+				}
 				
 				if(selected.name == "Koala")
 				{

@@ -94,6 +94,15 @@ public class KartController : MonoBehaviour
         kartStatus = GetComponent<KartStatus>();
 	}
 
+    void OnGUI()
+    {
+        if (playerNumber == 1)
+        {
+            GUI.Label(new Rect(10, 10, 100, 20), "Leaves: " + kartStatus.GetCurrentLeaves());
+            GUI.Label(new Rect(10, 30, 100, 20), "Points: " + kartStatus.GetCurrentPoints());
+        }
+    }
+
     void SetPlayer()
     {
         if (playerNumber == 1)
@@ -420,8 +429,8 @@ public class KartController : MonoBehaviour
         if (col.gameObject.name == "Bank")
         {
             kartStatus.BankLeaves();
-            //Instantiate(Explosion, col.transform.position, col.transform.rotation);
-            //rigidbody.AddForce(new Vector3(0, 0, rigidbody.velocity.z * 5000 * -1), ForceMode.Impulse);
+            Instantiate(Explosion, col.transform.position, col.transform.rotation);
+            rigidbody.AddForce(new Vector3(0, 0, rigidbody.velocity.z * 5000 * -1), ForceMode.Impulse);
         }
     }
 
