@@ -6,53 +6,15 @@ public class KartController : MonoBehaviour
 {
     public int playerNumber = 1;
 
-    // Michael: bundled wheelColliders and wheel Transforms into their own classes so they can be grouped
-    //          (and folded) in the unity inspector, and to add setters that affect all wheels at once
-    [System.Serializable]
-    public class WheelColliders
-    {
-        public WheelCollider FL;
-        public WheelCollider FR;
-        public WheelCollider RL;
-        public WheelCollider RR;
-    }
-    public WheelColliders wheelColliders = new WheelColliders();
+    public WheelCollider wheelFL;
+    public WheelCollider wheelFR;
+    public WheelCollider wheelRL;
+    public WheelCollider wheelRR;
 
-    [System.Serializable]
-    public class WheelTransforms
-    {
-        public Transform FL; 
-        public Transform FR;
-        public Transform RL;
-        public Transform RR;
-
-        public void SetLocalEulerAnglesLeft(Vector3 eulerAngles)
-        {
-            FL.localEulerAngles = eulerAngles;
-            RL.localEulerAngles = eulerAngles;
-        }
-
-        public void SetLocalEulerAnglesRight(Vector3 eulerAngles)
-        {
-            FR.localEulerAngles = eulerAngles;
-            RR.localEulerAngles = eulerAngles;
-        }
-
-        public void SetLocalEulerAnglesAll(Vector3 eulerAngles)
-        {
-            SetLocalEulerAnglesLeft(eulerAngles);
-            SetLocalEulerAnglesRight(eulerAngles);
-        }
-
-        public void Rotate(WheelColliders colliders, float deltaTime)
-        {
-            FL.Rotate(0, colliders.FL.rpm / 60 * 360 * deltaTime, 0);
-            FR.Rotate(0, colliders.FR.rpm / 60 * 360 * deltaTime, 0);
-            RL.Rotate(0, colliders.RL.rpm / 60 * -360 * deltaTime, 0);
-            RR.Rotate(0, colliders.RR.rpm / 60 * -360 * deltaTime, 0);
-        }
-    }
-    public WheelTransforms wheelTransforms = new WheelTransforms();
+    public Transform wheelFLTransform;
+    public Transform wheelFRTransform;
+    public Transform wheelRLTransform;
+    public Transform wheelRRTransform;
 
     //public int lives = 3;
     //public int maxLives = 5;
@@ -60,6 +22,11 @@ public class KartController : MonoBehaviour
 
     public float enginePower = 80.0f;
     public float maxSteer = 20.0f;
+
+    public float power = 0.0f;
+    public float hpower = 0.0f;
+    public float brake = 0.0f;
+    public float steer = 0.0f;
 
     public float maxSteerSpeed = 50;
     public float lowSpeedSteerAngle = 20;
@@ -75,6 +42,8 @@ public class KartController : MonoBehaviour
     private float slipSidewaysFriction;
     private float slipForwardFriction;
 
+    public float axisValue;
+
     public bool hoverEnabled = false;
     public float hoverHeight = 1.0f;
     public float hoverRotateSpeed = 35.0f;
@@ -85,7 +54,6 @@ public class KartController : MonoBehaviour
     private string buttonFire;
     private string buttonHover;
 
-    [Tooltip("Here is some text describing this")]
 	public Transform SpawnPoint;
     public Transform MineSpawnPoint;
 	public GameObject Rocket;
@@ -148,8 +116,8 @@ public class KartController : MonoBehaviour
 
     void SetValues()
     {
-        forwardFriction = wheelColliders.RL.forwardFriction.stiffness;
-        sidewaysFriction = wheelColliders.RL.sidewaysFriction.stiffness;
+        forwardFriction = wheelRL.forwardFriction.stiffness;
+        sidewaysFriction = wheelRL.sidewaysFriction.stiffness;
         slipForwardFriction = 0.04f;
         slipSidewaysFriction = 0.08f;
     }
@@ -163,71 +131,75 @@ public class KartController : MonoBehaviour
 
         if (!hoverEnabled)
         {
-            currentSpeed = Mathf.Round(2 * Mathf.PI * wheelColliders.RL.radius * wheelColliders.RL.rpm * 60 / 1000);
-            float power = Input.GetAxis(axisVertical) * enginePower * Time.deltaTime * speedModifier;
+            currentSpeed = Mathf.Round(2 * Mathf.PI * wheelRL.radius * wheelRL.rpm * 60 / 1000);
+            power = Input.GetAxis(axisVertical) * enginePower * Time.deltaTime * speedModifier;
 
             float speedFactor = rigidbody.velocity.magnitude / maxSteerSpeed;
-            float steer = Mathf.Lerp(lowSpeedSteerAngle, highSpeedSteerAngle, speedFactor);
+            steer = Mathf.Lerp(lowSpeedSteerAngle, highSpeedSteerAngle, speedFactor);
             steer *= Input.GetAxis(axisHorizontal);
             //steer = Input.GetAxis("Horizontal") * maxSteer;
 
-            float brake = Input.GetButton(buttonBrake) ? rigidbody.mass * 0.1f : 0.0f;
+            brake = Input.GetButton(buttonBrake) ? rigidbody.mass * 0.1f : 0.0f;
 
-            wheelColliders.FL.steerAngle = steer;
-            wheelColliders.FR.steerAngle = steer;
+            wheelFL.steerAngle = steer;
+            wheelFR.steerAngle = steer;
 
-            if (brake > 0.0)
-            {
-                if (rigidbody.velocity.magnitude > 1)
-                    SetSlip(slipForwardFriction, slipSidewaysFriction);
-                else
-                    SetSlip(1, 1);
-                wheelColliders.FL.brakeTorque = brake;
-                wheelColliders.FR.brakeTorque = brake;
-                //wheelRL.brakeTorque = brake;
-                //wheelRR.brakeTorque = brake;
-                wheelColliders.RL.motorTorque = 0;
-                wheelColliders.RR.motorTorque = 0;
-            }
-            else
-            {
-                //SetSlip(forwardFriction, sidewaysFriction);
-                //axisValue = Input.GetAxis("Vertical");
-                if (Input.GetAxis(axisVertical) == 0)
-                {
-                    wheelColliders.RL.brakeTorque = decelerationSpeed;
-                    wheelColliders.RR.brakeTorque = decelerationSpeed;
-                    wheelColliders.RL.motorTorque = 0;
-                    wheelColliders.RR.motorTorque = 0;
-                }
-                else
-                {
-                    SetSlip(forwardFriction, sidewaysFriction);
-                    wheelColliders.FL.brakeTorque = 0;
-                    wheelColliders.FR.brakeTorque = 0;
-                    wheelColliders.RL.brakeTorque = 0;
-                    wheelColliders.RR.brakeTorque = 0;
-                    
-                    if (currentSpeed < topSpeed && currentSpeed > (-topSpeed / 2))
-                    {
-                        wheelColliders.RL.motorTorque = power;
-                        wheelColliders.RR.motorTorque = power;
-                    }
-                    else
-                    {
-                        wheelColliders.RL.brakeTorque = decelerationSpeed;
-                        wheelColliders.RR.brakeTorque = decelerationSpeed;
-                        wheelColliders.RL.motorTorque = 0;
-                        wheelColliders.RR.motorTorque = 0;
-                    }
-                }
-            }
+            Brake();
         }
         else
         {
             HoverMode();
         }
 	}
+
+    void Brake()
+    {
+        if (brake > 0.0)
+        {
+            if (rigidbody.velocity.magnitude > 1)
+                SetSlip(slipForwardFriction, slipSidewaysFriction);
+            else
+                SetSlip(1, 1);
+            wheelFL.brakeTorque = brake;
+            wheelFR.brakeTorque = brake;
+            //wheelRL.brakeTorque = brake;
+            //wheelRR.brakeTorque = brake;
+            wheelRL.motorTorque = 0;
+            wheelRR.motorTorque = 0;
+        }
+        else
+        {
+            //SetSlip(forwardFriction, sidewaysFriction);
+            //axisValue = Input.GetAxis("Vertical");
+            if (Input.GetAxis(axisVertical) == 0)
+            {
+                wheelRL.brakeTorque = decelerationSpeed;
+                wheelRR.brakeTorque = decelerationSpeed;
+                wheelRL.motorTorque = 0;
+                wheelRR.motorTorque = 0;
+            }
+            else
+            {
+                SetSlip(forwardFriction, sidewaysFriction);
+                wheelFL.brakeTorque = 0;
+                wheelFR.brakeTorque = 0;
+                wheelRL.brakeTorque = 0;
+                wheelRR.brakeTorque = 0;
+                if (currentSpeed < topSpeed && currentSpeed > (-topSpeed / 2))
+                {
+                    wheelRL.motorTorque = power;
+                    wheelRR.motorTorque = power;
+                }
+                else
+                {
+                    wheelRL.brakeTorque = decelerationSpeed;
+                    wheelRR.brakeTorque = decelerationSpeed;
+                    wheelRL.motorTorque = 0;
+                    wheelRR.motorTorque = 0;
+                }
+            }
+        }
+    }
 
     void Update()
     {
@@ -262,15 +234,17 @@ public class KartController : MonoBehaviour
 
         if (!hoverEnabled)
         {
-            wheelTransforms.Rotate(wheelColliders, Time.deltaTime);
+            wheelFLTransform.Rotate(0, wheelFL.rpm / 60 * 360 * Time.deltaTime, 0);
+            wheelFRTransform.Rotate(0, wheelFR.rpm / 60 * 360 * Time.deltaTime, 0);
+            wheelRLTransform.Rotate(0, wheelRL.rpm / 60 * -360 * Time.deltaTime, 0);
+            wheelRRTransform.Rotate(0, wheelRR.rpm / 60 * -360 * Time.deltaTime, 0);
 
-            Vector3 wheelFLTransAngle = wheelTransforms.FL.localEulerAngles;
-            Vector3 wheelFRTransAngle = wheelTransforms.FR.localEulerAngles;
-            wheelFLTransAngle.y = wheelColliders.FL.steerAngle + 90 - wheelTransforms.FL.localEulerAngles.z;
-            wheelFRTransAngle.y = wheelColliders.FR.steerAngle + 90 - wheelTransforms.FR.localEulerAngles.z;
-            
-            wheelTransforms.FL.localEulerAngles = wheelFLTransAngle;
-            wheelTransforms.FR.localEulerAngles = wheelFRTransAngle;
+            Vector3 wheelFLTransAngle = wheelFLTransform.localEulerAngles;
+            Vector3 wheelFRTransAngle = wheelFRTransform.localEulerAngles;
+            wheelFLTransAngle.y = wheelFL.steerAngle + 90 - wheelFLTransform.localEulerAngles.z;
+            wheelFRTransAngle.y = wheelFR.steerAngle + 90 - wheelFRTransform.localEulerAngles.z;
+            wheelFLTransform.localEulerAngles = wheelFLTransAngle;
+            wheelFRTransform.localEulerAngles = wheelFRTransAngle;
         }
 
         if (rigidbody.velocity == Vector3.zero)
@@ -279,21 +253,21 @@ public class KartController : MonoBehaviour
 
     void SetSlip(float currentForwardFriction, float currentSidewaysFriction)
     {
-        var curve = wheelColliders.RL.forwardFriction;
+        var curve = wheelRL.forwardFriction;
         curve.stiffness = currentForwardFriction;
-        wheelColliders.RL.forwardFriction = curve;
+        wheelRL.forwardFriction = curve;
 
-        curve = wheelColliders.RR.forwardFriction;
+        curve = wheelRR.forwardFriction;
         curve.stiffness = currentForwardFriction;
-        wheelColliders.RR.forwardFriction = curve;
+        wheelRR.forwardFriction = curve;
 
-        curve = wheelColliders.RL.sidewaysFriction;
+        curve = wheelRL.sidewaysFriction;
         curve.stiffness = currentSidewaysFriction;
-        wheelColliders.RL.sidewaysFriction = curve;
+        wheelRL.sidewaysFriction = curve;
 
-        curve = wheelColliders.RR.sidewaysFriction;
+        curve = wheelRR.sidewaysFriction;
         curve.stiffness = currentSidewaysFriction;
-        wheelColliders.RR.sidewaysFriction = curve;
+        wheelRR.sidewaysFriction = curve;
     }
 
     void ToggleHoverMode()
@@ -307,13 +281,18 @@ public class KartController : MonoBehaviour
         if (hoverEnabled)
         {
             rigidbody.useGravity = false;
-            wheelTransforms.SetLocalEulerAnglesLeft(newLAngle);
-            wheelTransforms.SetLocalEulerAnglesRight(newRAngle);
+            wheelFLTransform.localEulerAngles = newLAngle;
+            wheelFRTransform.localEulerAngles = newRAngle;
+            wheelRLTransform.localEulerAngles = newLAngle;
+            wheelRRTransform.localEulerAngles = newRAngle;
         }
         else
         {
             rigidbody.useGravity = true;
-            wheelTransforms.SetLocalEulerAnglesAll(origAngle);
+            wheelFLTransform.localEulerAngles = origAngle;
+            wheelFRTransform.localEulerAngles = origAngle;
+            wheelRLTransform.localEulerAngles = origAngle;
+            wheelRRTransform.localEulerAngles = origAngle;
         }
     }
 
@@ -334,8 +313,7 @@ public class KartController : MonoBehaviour
             rigidbody.drag = 1.0f;
         }
 
-        float power = Input.GetAxis(axisVertical) * 40 * Time.deltaTime;
-        float hpower = 0.0f;
+        power = Input.GetAxis(axisVertical) * 40 * Time.deltaTime;
 
         if (!Input.GetButton(buttonBrake))
         {
