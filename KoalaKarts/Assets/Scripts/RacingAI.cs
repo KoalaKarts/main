@@ -28,15 +28,12 @@ public class RacingAI : MonoBehaviour {
 	public GameObject[] playerEnemies;
 	public GameObject[] enemies;
 	//targetted enemy, closest enemy, or favorable enemy to take out
-	public Transform[] target;
-	private GameObject enemy;
+	public GameObject closestEnemy;
+	public GameObject target;
 
 	/*AI ATTRIBUTES*/
 	private Vector3 dir;
 	public float speed = 0.2f;
-	public float fovRange = 10.0f;//field of vision/view
-	public Quaternion startAngle = Quaternion.AngleAxis (-60, Vector3.up);
-	public Quaternion endAngle = Quaternion.AngleAxis (5, Vector3.up);
 
 	//public float speed = kc.GetComponent(speed);
 	//public int hp = kh.GetComponent (leaves);
@@ -45,17 +42,24 @@ public class RacingAI : MonoBehaviour {
 	/*FIELD OF VISION*/
 	float totalFOV = 70.0f;
 	float rayRange = 100.0f;
+	public float fovRange = 10.0f;//field of vision/view
+	public Quaternion startAngle = Quaternion.AngleAxis (-60, Vector3.up);
+	public Quaternion endAngle = Quaternion.AngleAxis (5, Vector3.up);
 	
 	void Start () {
+
 		currNode = nodeArr [0];
 		nodeNum = 0;
 
 		//combines both enemy arrays into one....hopefully
-		aiEnemies = GameObject.FindGameObjectsWithTag ("AI");
+		aiEnemies = GameObject.FindGameObjectsWithTag("AI");
 		playerEnemies = GameObject.FindGameObjectsWithTag ("Kart");
 		enemies = new GameObject[aiEnemies.Length + playerEnemies.Length];
 		aiEnemies.CopyTo (enemies, 0);
 		playerEnemies.CopyTo (enemies, aiEnemies.Length);
+
+		target = closestEnemy;
+
 	}
 
 	void Update () {
@@ -113,7 +117,17 @@ public class RacingAI : MonoBehaviour {
 	}
 
 	void chase(){
+		dir = target.transform.position - transform.position;
+		Vector3 mov = dir.normalized * speed / 2;
+		transform.position += mov;
+		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (dir), 4 * Time.deltaTime);
+		if(transform.position.x - target.transform.position.x < 1){
+			enemyInRange = true;
+		}
 
+		/*
+		need to add some other stuff to end the chase, NEED TO MODIFY/FIX/ETC.
+		 */
 	}
 
 	void runAway(){
@@ -124,23 +138,25 @@ public class RacingAI : MonoBehaviour {
 
 	}
 
-	//ai's field of vision...not sure if this works or not yet, will probably need to modify
+	//ai's field of vision stuff
+	//can find enemy, won't do anything though
 	void aiVision(){
-		//OnDrawGizmosSelected ();
+		detectEnemy ();
 
 		RaycastHit hit;
 		Quaternion angle = transform.rotation * startAngle;
 		Vector3 dire = angle * Vector3.forward;
 		Vector3 pos = transform.position;
+
 		for(int i = 0; i < 24; i++){
-			//Debug.DrawLine (enemy.position, transform.position, Color.red);
+			Debug.DrawLine (pos, transform.position, Color.red);
 
 			if(Physics.Raycast (pos, dire, out hit, 500)){
-				Enemy enemy = hit.collider.GetComponent<Enemy>();
-				if(enemy){
+				if(hit.transform.tag == "Kart" || hit.transform.tag == "AI"){
 					enemyFound = true;
 				}
 			}
+			dire = endAngle * dire;
 		}
 	}
 
@@ -180,6 +196,22 @@ public class RacingAI : MonoBehaviour {
 			}
 		}
 		return closestItem;
+	}
+
+	GameObject detectEnemy(){
+		float distance = Mathf.Infinity;
+
+		foreach(GameObject cEnemy in enemies){
+			Vector3 dif = cEnemy.transform.position - transform.position;
+			float cDis = dif.sqrMagnitude;
+			if(cDis < distance){
+				while(closestEnemy != transform.gameObject){
+					closestEnemy = cEnemy;
+					distance = cDis;
+				}
+			}
+		}
+		return closestEnemy;
 	}
 
 	/*MANDATORY AI NEEDED:
