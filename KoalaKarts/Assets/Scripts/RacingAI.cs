@@ -205,10 +205,10 @@ public class RacingAI : MonoBehaviour {
 			Vector3 dif = cEnemy.transform.position - transform.position;
 			float cDis = dif.sqrMagnitude;
 			if(cDis < distance){
-				while(closestEnemy != transform.gameObject){
+				//while(closestEnemy != transform.gameObject){
 					closestEnemy = cEnemy;
 					distance = cDis;
-				}
+				//}
 			}
 		}
 		return closestEnemy;
