@@ -6,6 +6,7 @@ public class NetworkManager : MonoBehaviour {
 	//Used for ID & Server-building purposes
 	private const string typeName = "KoalaKartsTheOneAndOnly";
 	private const string gameName = "KoalaRoom";
+	public GameObject playerPrefab;
 
 	private HostData[] hostList;
 
@@ -27,6 +28,11 @@ public class NetworkManager : MonoBehaviour {
 	{
 		Network.Connect (hostData);
 	}
+
+	private void SpawnPlayer()
+	{
+		Network.Instantiate (playerPrefab, new Vector3 (0f, 5f, 0f), Quaternion.identity, 0);
+	}
 	
 	void OnMasterServerEvent(MasterServerEvent msEvent)
 	{
@@ -40,12 +46,14 @@ public class NetworkManager : MonoBehaviour {
 	void OnServerInitialized()
 	{
 		Debug.Log("Server Initialized");
+		SpawnPlayer ();
 	}
 
 	//For CLIENTS. When you've connected to a server, this happens
 	void OnConnectedToServer()
 	{
 		Debug.Log ("Server Joined");
+		SpawnPlayer ();
 	}
 
 	//Here's where the magic happens, baby
