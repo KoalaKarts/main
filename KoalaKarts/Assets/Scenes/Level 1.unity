@@ -26237,7 +26237,6 @@ GameObject:
   - 82: {fileID: 1127902771}
   - 82: {fileID: 1127902770}
   - 114: {fileID: 1127902773}
-  - 114: {fileID: 1127902774}
   m_Layer: 0
   m_Name: PlayerTwoKart
   m_TagString: Kart
@@ -26657,17 +26656,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0075833a3f5dfe4fa282abce46b98eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1127902774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1127902758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987494ec66575a14bbde800dcaeada27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1131923624
@@ -39379,7 +39367,6 @@ GameObject:
   - 82: {fileID: 1671151636}
   - 82: {fileID: 1671151635}
   - 114: {fileID: 1671151638}
-  - 114: {fileID: 1671151639}
   m_Layer: 0
   m_Name: PlayerOneKart
   m_TagString: Kart
@@ -39799,17 +39786,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0075833a3f5dfe4fa282abce46b98eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1671151639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1671151623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987494ec66575a14bbde800dcaeada27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1672354212
