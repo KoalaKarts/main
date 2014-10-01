@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: f13714baf0e014023b351c5e570aa3f4
+guid: 3d7553b3af4461b41831908408118032
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface1
-    100004: polySurface2
-    100006: transform3
     400000: //RootNode
-    400002: polySurface1
-    400004: polySurface2
-    400006: transform3
-    2300000: polySurface1
-    2300002: polySurface2
-    3300000: polySurface1
-    3300002: polySurface2
-    4300000: polySurface1
-    4300002: polySurface2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Rang_a_Rang
     7400000: Take 001
     9500000: //RootNode
     11100000: //RootNode
@@ -28,6 +19,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -38,7 +30,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

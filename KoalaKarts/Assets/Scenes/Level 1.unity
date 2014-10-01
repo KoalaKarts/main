@@ -39558,7 +39558,7 @@ MonoBehaviour:
   wheelFRTransform: {fileID: 1495796432}
   wheelRLTransform: {fileID: 2113357929}
   wheelRRTransform: {fileID: 112437446}
-  currentItem: 2
+  currentItem: 3
   enginePower: 80
   maxSteer: 20
   power: 0
