@@ -56,6 +56,7 @@ public class KartController : MonoBehaviour
 
 	public Transform SpawnPoint;
     public Transform MineSpawnPoint;
+    public GameObject RangARang;
 	public GameObject Rocket;
     public GameObject Mine;
     public GameObject Shield;
@@ -78,11 +79,12 @@ public class KartController : MonoBehaviour
     public enum Item
     {
         NULL,
-        SpeedBoost,
+        Leaf,
         Rocket,
+        RangARang,
+        SpeedBoost,
         Mine,
         Shield,
-        Leaf
     }
 
 	// Use this for initialization
@@ -344,11 +346,14 @@ public class KartController : MonoBehaviour
         {
             case Item.NULL:
                 break;
-            case Item.SpeedBoost:
-				EnableSpeedBoost();
+            case Item.RangARang:
+                ShootItem();
                 break;
             case Item.Rocket:
-				ShootRocket();
+				ShootItem();
+                break;
+            case Item.SpeedBoost:
+				EnableSpeedBoost();
                 break;
             case Item.Mine:
                 PlaceMine();
@@ -376,10 +381,20 @@ public class KartController : MonoBehaviour
 		topSpeed = 250.0f;
 	}
 
-	void ShootRocket()
+	void ShootItem()
 	{
-		Object proj = Instantiate(Rocket, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
-		proj.name = "Rocket";
+        Object proj;
+        switch (currentItem)
+        {
+            case Item.Rocket:
+                proj = Instantiate(Rocket, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
+                proj.name = "Rocket";
+                break;
+            case Item.RangARang:
+                proj = Instantiate(RangARang, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
+                proj.name = "RangARang";
+                break;
+        }
 	}
 
     void PlaceMine()

@@ -6,11 +6,12 @@ public class ItemSpawner : MonoBehaviour
     public enum Item
     {
         NULL,
-        SpeedBoost,
+        Leaf,
         Rocket,
+        RangARang,
+        SpeedBoost,
         Mine,
         Shield,
-        Leaf
     }
 
     public bool healthSpawner = false;
@@ -72,17 +73,29 @@ public class ItemSpawner : MonoBehaviour
             case Item.NULL:
                 currentItem = Item.NULL;
                 break;
-            case Item.SpeedBoost:
-                currentItem = Item.SpeedBoost;
-				obj = (GameObject) Instantiate(itemSpeedBoost, transform.position, transform.rotation);
-				obj.transform.parent = transform;
-				obj.name = "SpeedBoostItem";
+            case Item.Leaf:
+                currentItem = Item.Leaf;
+                obj = (GameObject)Instantiate(itemLeaf, new Vector3(transform.position.x, transform.position.y + 3.0f, transform.position.z), transform.rotation);
+                obj.transform.parent = transform;
+                obj.name = "LeafItem";
                 break;
             case Item.Rocket:
                 currentItem = Item.Rocket;
 				obj = (GameObject) Instantiate(itemRocket, transform.position, transform.rotation);
 				obj.transform.parent = transform;
 				obj.name = "RocketItem";
+                break;
+            /*case Item.RangARang:
+                currentItem = Item.RangARang;
+                obj = (GameObject)Instantiate(itemRangARang, transform.position, transform.rotation);
+                obj.transform.parent = transform;
+                obj.name = "RangARangItem";
+                break;*/
+            case Item.SpeedBoost:
+                currentItem = Item.SpeedBoost;
+				obj = (GameObject) Instantiate(itemSpeedBoost, transform.position, transform.rotation);
+				obj.transform.parent = transform;
+				obj.name = "SpeedBoostItem";
                 break;
             case Item.Mine:
                 currentItem = Item.Mine;
@@ -96,12 +109,7 @@ public class ItemSpawner : MonoBehaviour
 				obj.transform.parent = transform;
 				obj.name = "ShieldItem";
                 break;
-            case Item.Leaf:
-                currentItem = Item.Leaf;
-                obj = (GameObject)Instantiate(itemLeaf, new Vector3(transform.position.x, transform.position.y + 3.0f, transform.position.z), transform.rotation);
-                obj.transform.parent = transform;
-                obj.name = "LeafItem";
-                break;
+            
             default:
                 currentItem = Item.NULL;
                 break;
