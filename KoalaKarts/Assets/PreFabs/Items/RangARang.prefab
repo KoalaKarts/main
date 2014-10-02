@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b92867d286837f4da2894cd22d0dbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectileSpeed: 7
-  Explosion: {fileID: 0}
+  ProjectileSpeed: 5
+  Explosion: {fileID: 100000, guid: 11b007dd99fa34a4a867ad035ef56681, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

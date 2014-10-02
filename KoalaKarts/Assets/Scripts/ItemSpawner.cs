@@ -20,8 +20,9 @@ public class ItemSpawner : MonoBehaviour
 	public float spawnTimer;
     public Item currentItem = Item.NULL;
 
-    public GameObject itemSpeedBoost;
     public GameObject itemRocket;
+    public GameObject itemRangARang;
+    public GameObject itemSpeedBoost;
     public GameObject itemMine;
     public GameObject itemShield;
     public GameObject itemLeaf;
@@ -85,12 +86,12 @@ public class ItemSpawner : MonoBehaviour
 				obj.transform.parent = transform;
 				obj.name = "RocketItem";
                 break;
-            /*case Item.RangARang:
+            case Item.RangARang:
                 currentItem = Item.RangARang;
                 obj = (GameObject)Instantiate(itemRangARang, transform.position, transform.rotation);
                 obj.transform.parent = transform;
                 obj.name = "RangARangItem";
-                break;*/
+                break;
             case Item.SpeedBoost:
                 currentItem = Item.SpeedBoost;
 				obj = (GameObject) Instantiate(itemSpeedBoost, transform.position, transform.rotation);

@@ -876,6 +876,7 @@ GameObject:
   - 4: {fileID: 32499173}
   - 135: {fileID: 32499175}
   - 114: {fileID: 32499174}
+  - 122: {fileID: 32499176}
   m_Layer: 0
   m_Name: ItemSpawner11
   m_TagString: ItemSpawn
@@ -910,8 +911,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -927,6 +929,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &32499176
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32499172}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &35538053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,6 +4599,7 @@ GameObject:
   - 4: {fileID: 215372295}
   - 135: {fileID: 215372297}
   - 114: {fileID: 215372296}
+  - 122: {fileID: 215372298}
   m_Layer: 0
   m_Name: ItemSpawner4
   m_TagString: ItemSpawn
@@ -4620,8 +4634,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -4637,6 +4652,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &215372298
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215372294}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &223728469
 GameObject:
   m_ObjectHideFlags: 0
@@ -9559,6 +9585,7 @@ GameObject:
   - 4: {fileID: 437123478}
   - 135: {fileID: 437123477}
   - 114: {fileID: 437123479}
+  - 122: {fileID: 437123480}
   m_Layer: 0
   m_Name: ItemSpawner1
   m_TagString: ItemSpawn
@@ -9605,11 +9632,23 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
+--- !u!122 &437123480
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437123476}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &443795885
 GameObject:
   m_ObjectHideFlags: 0
@@ -12083,6 +12122,7 @@ MonoBehaviour:
   m_LightmapIndex: -1
   m_LightmapSize: 1024
   m_DrawTreesAndFoliage: 1
+  m_CollectDetailPatches: 1
   m_MaterialTemplate: {fileID: 0}
 --- !u!4 &526809423
 Transform:
@@ -22949,6 +22989,7 @@ GameObject:
   - 4: {fileID: 948595051}
   - 135: {fileID: 948595053}
   - 114: {fileID: 948595052}
+  - 122: {fileID: 948595054}
   m_Layer: 0
   m_Name: ItemSpawner5
   m_TagString: ItemSpawn
@@ -22983,8 +23024,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -23000,6 +23042,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &948595054
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948595050}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &951748485
 GameObject:
   m_ObjectHideFlags: 0
@@ -27804,6 +27857,7 @@ GameObject:
   - 4: {fileID: 1169033491}
   - 135: {fileID: 1169033493}
   - 114: {fileID: 1169033492}
+  - 122: {fileID: 1169033494}
   m_Layer: 0
   m_Name: ItemSpawner12
   m_TagString: ItemSpawn
@@ -27838,8 +27892,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -27855,6 +27910,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1169033494
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169033490}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1169395183
 GameObject:
   m_ObjectHideFlags: 0
@@ -28505,6 +28571,7 @@ GameObject:
   - 4: {fileID: 1186227358}
   - 135: {fileID: 1186227360}
   - 114: {fileID: 1186227359}
+  - 122: {fileID: 1186227361}
   m_Layer: 0
   m_Name: ItemSpawner3
   m_TagString: ItemSpawn
@@ -28539,8 +28606,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -28556,6 +28624,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1186227361
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186227357}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1186626499
 GameObject:
   m_ObjectHideFlags: 0
@@ -35013,6 +35092,7 @@ GameObject:
   - 4: {fileID: 1476893446}
   - 135: {fileID: 1476893448}
   - 114: {fileID: 1476893447}
+  - 122: {fileID: 1476893449}
   m_Layer: 0
   m_Name: ItemSpawner8
   m_TagString: ItemSpawn
@@ -35047,8 +35127,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -35064,6 +35145,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1476893449
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1476893445}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1476896584
 GameObject:
   m_ObjectHideFlags: 0
@@ -39592,7 +39684,7 @@ MonoBehaviour:
   wheelFRTransform: {fileID: 1495796432}
   wheelRLTransform: {fileID: 2113357929}
   wheelRRTransform: {fileID: 112437446}
-  currentItem: 3
+  currentItem: 0
   enginePower: 80
   maxSteer: 20
   power: 0
@@ -40566,6 +40658,7 @@ GameObject:
   - 4: {fileID: 1723983194}
   - 135: {fileID: 1723983196}
   - 114: {fileID: 1723983195}
+  - 122: {fileID: 1723983197}
   m_Layer: 0
   m_Name: ItemSpawner13
   m_TagString: ItemSpawn
@@ -40600,8 +40693,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -40617,6 +40711,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1723983197
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723983193}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1728828697
 GameObject:
   m_ObjectHideFlags: 0
@@ -41576,6 +41681,7 @@ GameObject:
   - 4: {fileID: 1760375726}
   - 135: {fileID: 1760375728}
   - 114: {fileID: 1760375727}
+  - 122: {fileID: 1760375729}
   m_Layer: 0
   m_Name: ItemSpawner9
   m_TagString: ItemSpawn
@@ -41610,8 +41716,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -41627,6 +41734,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1760375729
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760375725}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1001 &1762574976
 Prefab:
   m_ObjectHideFlags: 0
@@ -42636,6 +42754,7 @@ GameObject:
   - 4: {fileID: 1808759229}
   - 135: {fileID: 1808759228}
   - 114: {fileID: 1808759227}
+  - 122: {fileID: 1808759230}
   m_Layer: 0
   m_Name: ItemSpawner2
   m_TagString: ItemSpawn
@@ -42658,8 +42777,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -42687,6 +42807,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1437070255}
   m_RootOrder: 1
+--- !u!122 &1808759230
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808759226}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1809119614
 GameObject:
   m_ObjectHideFlags: 0
@@ -43509,6 +43640,7 @@ GameObject:
   - 4: {fileID: 1834286991}
   - 135: {fileID: 1834286993}
   - 114: {fileID: 1834286992}
+  - 122: {fileID: 1834286994}
   m_Layer: 0
   m_Name: ItemSpawner6
   m_TagString: ItemSpawn
@@ -43543,8 +43675,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -43560,6 +43693,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1834286994
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1834286990}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1001 &1834894726
 Prefab:
   m_ObjectHideFlags: 0
@@ -46463,6 +46607,7 @@ GameObject:
   - 4: {fileID: 1985167489}
   - 135: {fileID: 1985167491}
   - 114: {fileID: 1985167490}
+  - 122: {fileID: 1985167492}
   m_Layer: 0
   m_Name: ItemSpawner7
   m_TagString: ItemSpawn
@@ -46497,8 +46642,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -46514,6 +46660,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &1985167492
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985167488}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &1991182314
 GameObject:
   m_ObjectHideFlags: 0
@@ -50010,6 +50167,7 @@ GameObject:
   - 4: {fileID: 2108189215}
   - 135: {fileID: 2108189217}
   - 114: {fileID: 2108189216}
+  - 122: {fileID: 2108189218}
   m_Layer: 0
   m_Name: ItemSpawner10
   m_TagString: ItemSpawn
@@ -50044,8 +50202,9 @@ MonoBehaviour:
   spawnTime: 10
   spawnTimer: 0
   currentItem: 0
+  itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
+  itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
-  itemRocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
   itemLeaf: {fileID: 100000, guid: dc8bd2fd938361f40a336586ff7c2fb3, type: 2}
@@ -50061,6 +50220,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &2108189218
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108189214}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288572224
+  m_Size: 10
 --- !u!1 &2111116863
 GameObject:
   m_ObjectHideFlags: 0

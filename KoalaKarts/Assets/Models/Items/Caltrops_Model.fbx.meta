@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 60e7d75308464ce4eb5a385a527ce03d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Caltrops_Model
+    100004: pCone1
+    100006: pCone22
+    100008: pCone23
+    100010: pCone24
+    100012: pCone25
+    100014: pCone26
+    100016: pCone27
+    100018: pCone28
+    100020: pCone29
+    100022: pCone30
+    100024: pCone31
+    100026: pCone32
+    100028: pCone33
+    100030: pCone34
+    100032: pCone35
+    100034: pCone36
+    100036: pCone37
+    100038: pCone38
+    100040: pCone39
+    100042: pCone40
+    100044: pCone41
+    100046: transform1
+    100048: transform10
+    100050: transform11
+    100052: transform12
+    100054: transform13
+    100056: transform14
+    100058: transform15
+    100060: transform16
+    100062: transform17
+    100064: transform18
+    100066: transform19
+    100068: transform2
+    100070: transform20
+    100072: transform21
+    100074: transform3
+    100076: transform4
+    100078: transform5
+    100080: transform6
+    100082: transform7
+    100084: transform8
+    100086: transform9
+    400000: //RootNode
+    400002: Caltrops_Model
+    400004: pCone1
+    400006: pCone22
+    400008: pCone23
+    400010: pCone24
+    400012: pCone25
+    400014: pCone26
+    400016: pCone27
+    400018: pCone28
+    400020: pCone29
+    400022: pCone30
+    400024: pCone31
+    400026: pCone32
+    400028: pCone33
+    400030: pCone34
+    400032: pCone35
+    400034: pCone36
+    400036: pCone37
+    400038: pCone38
+    400040: pCone39
+    400042: pCone40
+    400044: pCone41
+    400046: transform1
+    400048: transform10
+    400050: transform11
+    400052: transform12
+    400054: transform13
+    400056: transform14
+    400058: transform15
+    400060: transform16
+    400062: transform17
+    400064: transform18
+    400066: transform19
+    400068: transform2
+    400070: transform20
+    400072: transform21
+    400074: transform3
+    400076: transform4
+    400078: transform5
+    400080: transform6
+    400082: transform7
+    400084: transform8
+    400086: transform9
+    2300000: Caltrops_Model
+    3300000: Caltrops_Model
+    4300000: Caltrops_Model
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
