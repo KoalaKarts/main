@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: c97fbab066a2eac4b9f3e814f40666df
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bridges
+    100002: BuildingRooftop
+    100004: CentralBuilding
+    100006: CentralBuildings
+    100008: CentralEdge
+    100010: CentralEdge3
+    100012: CentralEdge4
+    100014: CentralEdge5
+    100016: CityGround
+    100018: Edges
+    100020: Ground
+    100022: Middles
+    100024: Outside_Tower1
+    100026: Outside_Tower2
+    100028: Outside_Tower3
+    100030: Outside_Tower4
+    100032: OutsideTowers
+    100034: SkyBridge
+    100036: SkyBridge1
+    100038: //RootNode
+    100040: Towers
+    400000: Bridges
+    400002: BuildingRooftop
+    400004: CentralBuilding
+    400006: CentralBuildings
+    400008: CentralEdge
+    400010: CentralEdge3
+    400012: CentralEdge4
+    400014: CentralEdge5
+    400016: CityGround
+    400018: Edges
+    400020: Ground
+    400022: Middles
+    400024: Outside_Tower1
+    400026: Outside_Tower2
+    400028: Outside_Tower3
+    400030: Outside_Tower4
+    400032: OutsideTowers
+    400034: SkyBridge
+    400036: SkyBridge1
+    400038: //RootNode
+    400040: Towers
+    2300000: BuildingRooftop
+    2300002: CentralBuilding
+    2300004: CentralEdge
+    2300006: CentralEdge3
+    2300008: CentralEdge4
+    2300010: CentralEdge5
+    2300012: CityGround
+    2300014: Outside_Tower1
+    2300016: Outside_Tower2
+    2300018: Outside_Tower3
+    2300020: Outside_Tower4
+    2300022: SkyBridge
+    2300024: SkyBridge1
+    3300000: BuildingRooftop
+    3300002: CentralBuilding
+    3300004: CentralEdge
+    3300006: CentralEdge3
+    3300008: CentralEdge4
+    3300010: CentralEdge5
+    3300012: CityGround
+    3300014: Outside_Tower1
+    3300016: Outside_Tower2
+    3300018: Outside_Tower3
+    3300020: Outside_Tower4
+    3300022: SkyBridge
+    3300024: SkyBridge1
+    4300000: CityGround
+    4300002: SkyBridge
+    4300004: SkyBridge1
+    4300006: BuildingRooftop
+    4300008: CentralBuilding
+    4300010: CentralEdge4
+    4300012: CentralEdge5
+    4300014: CentralEdge
+    4300016: CentralEdge3
+    4300018: Outside_Tower3
+    4300020: Outside_Tower2
+    4300022: Outside_Tower1
+    4300024: Outside_Tower4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
