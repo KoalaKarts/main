@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus.unity
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OnlineMenus.unity
   - enabled: 1
     path: Assets/Scenes/OnlineLevel.unity
