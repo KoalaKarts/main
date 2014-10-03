@@ -96,7 +96,7 @@ public class RacingAI : MonoBehaviour {
 			//useWeapon();
 		}
 
-		if(!enemyFound && hasWeapon){// keep hasWeapon false for now, weapons aren't in yet/doesn't work or something
+		if(!enemyFound && hasWeapon){
 			findEnemy ();
 			if(Vector3.Distance (currNode.transform.position, transform.position) < nodeArr.Length){
 				nodeNum++;
@@ -164,9 +164,10 @@ public class RacingAI : MonoBehaviour {
 		Vector3 dire = angle * transform.forward;
 		Vector3 pos = transform.position;
 
+		//not working, but its supposed to show 24 red lines showing the supposed field of vision
 		for(int i = 0; i < 24; i++){
 
-			//NEED TO FIX/MODIFY
+			//NEED TO FIX/MODIFY MAYBE
 			if(Physics.Raycast (pos, dire, 100, 150)){
 				Debug.DrawLine (pos, transform.position, Color.red);
 				if(hit.transform.tag == "Kart" || hit.transform.tag == "AI"){
