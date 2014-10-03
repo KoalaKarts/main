@@ -52,6 +52,7 @@ public class RacingAI : MonoBehaviour {
 	
 	void Start () {
 		ks = GetComponent<KartStatus>();
+
 		kc = GetComponent<KartController>();
 
 		currNode = nodeArr [0];
@@ -137,15 +138,13 @@ public class RacingAI : MonoBehaviour {
 		Vector3 mov = dir.normalized * speed / 2;
 		transform.position += mov;
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (dir), 4 * Time.deltaTime);
-		/*if(transform.position.x - target.transform.position.x < 1){
-			enemyInRange = true;
-		}/*
 
 		/*
 		need to add some other stuff to end the chase, NEED TO MODIFY/FIX/ETC.
 		 */
 	}
 
+	//use if this character has less health then the target
 	void runAway(){
 
 	}
