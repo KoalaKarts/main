@@ -215,6 +215,11 @@ public class KartController : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y < -200)
+        {
+            kartStatus.Respawn();
+        }
+
         if (Input.GetButtonDown(buttonFire))
         {
             UseItem();

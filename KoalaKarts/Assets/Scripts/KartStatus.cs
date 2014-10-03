@@ -145,7 +145,7 @@ public class KartStatus : MonoBehaviour
     /// <summary>
     /// Respawn player.
     /// </summary>
-    void Respawn()
+    public void Respawn()
     {
         hits = 3;
         currentLeaves = 0;
