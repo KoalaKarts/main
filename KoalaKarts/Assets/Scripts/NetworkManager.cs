@@ -20,17 +20,17 @@ public class NetworkManager : MonoBehaviour {
 
 	private void RefreshHostList()
 	{
-		MasterServer.RequestHostList (typeName);
+		MasterServer.RequestHostList(typeName);
 	}
 
 	private void JoinServer(HostData hostData)
 	{
-		Network.Connect (hostData);
+		Network.Connect(hostData);
 	}
 
 	private void SpawnPlayer(Vector3 startpoint)
 	{
-		Network.Instantiate (GenericPlayer, startpoint, Quaternion.identity, 0);
+		Network.Instantiate(GenericPlayer, startpoint, Quaternion.identity, 0);
 	}
 	
 	void OnMasterServerEvent(MasterServerEvent msEvent)

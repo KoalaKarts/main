@@ -42,7 +42,7 @@ public class Menus : MonoBehaviour {
 				
 				if(selected.name == "OPlay")
 				{
-					Application.LoadLevel("OnlineMenus");
+					Application.LoadLevel("OnlineLevel");
 					clickAudio.Play();
 				}
 				
