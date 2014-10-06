@@ -329,7 +329,7 @@ public class KartController : MonoBehaviour
         }
     }
 
-    void UseItem()
+   public void UseItem()
     {
         switch (currentItem)
         {

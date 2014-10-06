@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class RacingAI : MonoBehaviour {
-	public KartStatus ks;
-	public KartController kc;
+	public KartStatus respawn;
+	public KartController itemAI;
+
+	private CharacterController character;
 
 	/*NODE STUFF*/
 	//holds all of the nodes
@@ -38,6 +40,9 @@ public class RacingAI : MonoBehaviour {
 	private Vector3 dir;
 	public float speed = 0.2f;
 	public bool hoverMode = false;
+	public bool respawning = false;
+	public float respawnTimer;
+	public float respawnTime = 2;
 
 	//public float speed = kc.GetComponent(speed);
 	//public int hp = kh.GetComponent (leaves);
@@ -51,9 +56,7 @@ public class RacingAI : MonoBehaviour {
 	public Quaternion endAngle = Quaternion.AngleAxis (5, Vector3.up);
 	
 	void Start () {
-		ks = GetComponent<KartStatus>();
-
-		kc = GetComponent<KartController>();
+		//character = GetComponent (CharacterController);
 
 		currNode = nodeArr [0];
 		nodeNum = 0;
@@ -72,6 +75,10 @@ public class RacingAI : MonoBehaviour {
 	}
 
 	void Update () {
+		if(transform.position < -200){
+			respawn.Respawn ();
+		}
+
 		if(enemyFound == false){
 			enemyInRange = false;
 		}
@@ -109,26 +116,46 @@ public class RacingAI : MonoBehaviour {
 		}
 	}
 
-	//moves towards node
+	//moves towards node, NEED TO FIX
 	void findEnemy(){
+		Vector3 newRotation = Quaternion.LookRotation(Camera.main.transform.position - transform.position).eulerAngles;
+		newRotation.x = 0;
+		newRotation.z = 0;
+
 		dir = currNode.transform.position - transform.position;
-		Vector3 mov = dir.normalized * speed / 10;
-		transform.position += mov;
-		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (dir), 4 * Time.deltaTime);
+		float dist = dir.magnitude;
+		dir = dir.normalized;
+
+		Vector3 mov = dir.normalized * speed / 5;
+		float angleToTarget = Vector3.Angle (dir.normalized * speed, transform.forward);
+
+		transform.Translate(mov);
+		//transform.position += mov + transform.forward;
+
+		/*same as below*/
+		//Quaternion turn = Quaternion.LookRotation (dir);
+		//transform.rotation = Quaternion.Slerp (transform.rotation, turn, 4 * Time.deltaTime);
+
+		/*causes ai to try to bounce up at intended position*/
+		//transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (dir), 4 * Time.deltaTime);
 	}
 
+	//NEED TO FIX?
 	void findWeapon(){
 		findClosestItemSpawn();
 		dir = closestItem.transform.position - transform.position;
 		Vector3 mov = dir.normalized * speed / 10;
 		transform.position += mov;
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (dir), 4 * Time.deltaTime);
-		if(transform.position.y - closestItem.transform.position.y < 1){//MIGHT NEED TO FIX SINCE IT ONLY CHECKS FOR THE Y POSITION FOR BOTH
+		if(transform.position.x - closestItem.transform.position.x < 1 || 
+		   transform.position.y - closestItem.transform.position.y < 1 ||
+		   transform.position.z - closestItem.transform.position.z < 1){
 			hasWeapon = true;
 		}
 	}
 
 	void useWeapon(){
+		itemAI.GetComponent<KartController> ().UseItem ();
 		hasWeapon = false;
 	}
 
