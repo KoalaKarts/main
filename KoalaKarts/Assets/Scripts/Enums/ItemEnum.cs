@@ -4,6 +4,7 @@
     Leaf,
     Rocket,
     RangARang,
+    Caltrops,
     SpeedBoost,
     Mine,
     Shield,

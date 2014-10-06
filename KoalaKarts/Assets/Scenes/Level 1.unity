@@ -317,6 +317,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -760,6 +761,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -1782,6 +1784,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -2488,6 +2491,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &644507504
 Transform:
   m_ObjectHideFlags: 0
@@ -3307,6 +3311,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -4327,6 +4332,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!82 &1127902770
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4722,6 +4728,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -4826,6 +4833,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -5527,6 +5535,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -6410,6 +6419,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1658928183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6574,6 +6584,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!82 &1671151632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6918,8 +6929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 1403489643}
   MineSpawnPoint: {fileID: 1397069357}
-  RangARang: {fileID: 100004, guid: 9ad77ba8108ec9f4dbeed6cfb85cdea6, type: 2}
-  Rocket: {fileID: 100000, guid: 4c1dc42f9765cb645b64919b8e544256, type: 2}
+  RangARang: {fileID: 100000, guid: fdad9408e08e3f74caa2a23c89a5aa50, type: 2}
+  Rocket: {fileID: 100004, guid: 9ad77ba8108ec9f4dbeed6cfb85cdea6, type: 2}
   Mine: {fileID: 100000, guid: 42e769da8107b9448992be2782dba0a9, type: 2}
   Shield: {fileID: 100000, guid: f9b88873acd0f2c4fa49438757767a3f, type: 2}
   Explosion: {fileID: 100000, guid: 11b007dd99fa34a4a867ad035ef56681, type: 2}
@@ -6929,7 +6940,8 @@ MonoBehaviour:
   healthPickupAudio: {fileID: 1671151637}
   shieldPickupAudio: {fileID: 1671151636}
   speedBoostAudio: {fileID: 1671151635}
-  CurrentItem: 2
+  kartStatus: {fileID: 0}
+  CurrentItem: 0
 --- !u!1 &1687053729
 GameObject:
   m_ObjectHideFlags: 0
@@ -7065,6 +7077,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -7279,6 +7292,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -7483,6 +7497,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1791607446
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,6 +7621,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -7793,6 +7809,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -8072,6 +8089,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}
@@ -8757,6 +8775,7 @@ MonoBehaviour:
   currentItem: 0
   itemRocket: {fileID: 100008, guid: a37b037c8f5417d4ab0b3b51c635b149, type: 2}
   itemRangARang: {fileID: 100002, guid: 7575249989acead44bcbc69f2e40466f, type: 2}
+  itemCaltrops: {fileID: 100000, guid: 92cb9741a6ffbdd4ca79b8d637b3dae8, type: 2}
   itemSpeedBoost: {fileID: 100006, guid: f08f3097b355b3643aee5e6dd15aa47d, type: 2}
   itemMine: {fileID: 100000, guid: 5fe4e8834a297bb48ac88057ce04768f, type: 2}
   itemShield: {fileID: 100000, guid: 25beb03a154264b4fa3d6a314aefc24b, type: 2}

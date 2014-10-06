@@ -25,7 +25,7 @@ public class KartItemsController : MonoBehaviour
     public AudioSource shieldPickupAudio;
     public AudioSource speedBoostAudio;
 
-    private KartStatus kartStatus;
+    public KartStatus kartStatus;
     private KartMotionController kartMotion; 
 
     public Item CurrentItem = Item.Rocket;
