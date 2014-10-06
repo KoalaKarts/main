@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class KartController : MonoBehaviour
 {
     public int playerNumber = 1;
-    
+
     [System.Serializable]
     public class WheelColliders
     {
@@ -16,7 +16,6 @@ public class KartController : MonoBehaviour
 
     //public int lives = 3;
     //public int maxLives = 5;
-    public Item currentItem = Item.Rocket;
 
     public float enginePower = 80.0f;
     public float maxSteer = 20.0f;
@@ -32,7 +31,7 @@ public class KartController : MonoBehaviour
     public float decelerationSpeed = 50;
 
     public float currentSpeed;
-	public float speedModifier = 150.0f;
+    public float speedModifier = 150.0f;
     public float topSpeed = 250;
 
     private float sidewaysFriction;
@@ -42,7 +41,6 @@ public class KartController : MonoBehaviour
 
     public float axisValue;
 
-    public bool hoverEnabled = false;
     public float hoverHeight = 1.0f;
     public float hoverRotateSpeed = 35.0f;
 
@@ -52,51 +50,24 @@ public class KartController : MonoBehaviour
     private string buttonFire;
     private string buttonHover;
 
-	public Transform SpawnPoint;
-    public Transform MineSpawnPoint;
-    public GameObject RangARang;
-	public GameObject Rocket;
-    public GameObject Mine;
-    public GameObject Shield;
     public GameObject Explosion;
-    public GameObject LifeLeaf1;
-    public GameObject LifeLeaf2;
-
-	private bool boostEnabled = false;
-	private float speedBoostTimer = 5.0f;
-
-    public bool shieldEnabled = false;
-    private float shieldTimer = 5.0f;
-
-    public AudioSource healthPickupAudio;
-    public AudioSource shieldPickupAudio;
-    public AudioSource speedBoostAudio;
 
     [System.NonSerialized]
     public KartStatus kartStatus;
     [System.NonSerialized]
     public KartWheelGeomController GeomController;
+    [System.NonSerialized]
+    public KartItemsController ItemsController;
 
-    public enum Item
-    {
-        NULL,
-        Leaf,
-        Rocket,
-        RangARang,
-        SpeedBoost,
-        Mine,
-        Shield,
-    }
-
-	// Use this for initialization
-	void Start ()
+    void Start()
     {
         SetPlayer();
         rigidbody.centerOfMass = new Vector3(0, -1f, 0);
         SetValues();
         kartStatus = GetComponent<KartStatus>();
         GeomController = GetComponent<KartWheelGeomController>();
-	}
+        ItemsController = GetComponent<KartItemsController>();
+    }
 
     void OnGUI()
     {
@@ -104,7 +75,7 @@ public class KartController : MonoBehaviour
         {
             GUI.Label(new Rect(10, 10, 100, 20), "Leaves: " + kartStatus.GetCurrentLeaves());
             GUI.Label(new Rect(10, 30, 100, 20), "Points: " + kartStatus.GetCurrentPoints());
-            GUI.Label(new Rect(10, 50, 200, 20), "Item: " + currentItem.ToString());
+            GUI.Label(new Rect(10, 50, 200, 20), "Item: " + ItemsController.CurrentItem.ToString());
         }
     }
 
@@ -136,14 +107,14 @@ public class KartController : MonoBehaviour
         slipSidewaysFriction = 0.08f;
     }
 
-	void FixedUpdate ()
+    void FixedUpdate()
     {
         if (Input.GetButtonUp(buttonHover) && currentSpeed == 0.0f)
         {
             ToggleHoverMode();
         }
 
-        if (!hoverEnabled)
+        if (kartStatus.GetKartMode() == KartMode.Kart)
         {
             currentSpeed = Mathf.Round(2 * Mathf.PI * Colliders.RL.radius * Colliders.RL.rpm * 60 / 1000);
             power = Input.GetAxis(axisVertical) * enginePower * Time.deltaTime * speedModifier;
@@ -160,11 +131,11 @@ public class KartController : MonoBehaviour
 
             Brake();
         }
-        else
+        else // hovercraft
         {
             HoverMode();
         }
-	}
+    }
 
     void Brake()
     {
@@ -224,34 +195,10 @@ public class KartController : MonoBehaviour
 
         if (Input.GetButtonDown(buttonFire))
         {
-            UseItem();
+            ItemsController.UseItem();
         }
 
-        if (boostEnabled)
-        {
-            if (speedBoostTimer > 0)
-            {
-                speedBoostTimer -= Time.deltaTime;
-            }
-            else
-            {
-                DisableSpeedBoost();
-            }
-        }
-
-        if (shieldEnabled)
-        {
-            if (shieldTimer > 0)
-            {
-                shieldTimer -= Time.deltaTime;
-            }
-            else
-            {
-                DisableShield();
-            }
-        }
-
-        if (!hoverEnabled)
+        if (kartStatus.GetKartMode() == KartMode.Kart)
         {
             GeomController.SpinWheels(Colliders.FR.rpm / 60 * 360 * Time.deltaTime);
             GeomController.TurnFrontWheels(Colliders.FL.steerAngle, Colliders.FR.steerAngle);
@@ -282,18 +229,23 @@ public class KartController : MonoBehaviour
 
     void ToggleHoverMode()
     {
-        hoverEnabled = !hoverEnabled;
+       switch(kartStatus.GetKartMode())
+       {
+            case KartMode.Kart:
+                rigidbody.useGravity = false;
+                GeomController.SwitchToHovercraftMode();
+               break;
+           case KartMode.Hovercraft:
+                rigidbody.useGravity = true;
+                GeomController.SwitchToKartMode();
+                break;
+           default: break;
+        }
 
-        if (hoverEnabled)
-        {
-            rigidbody.useGravity = false;
-            GeomController.SwitchToHovercraftMode();
-        }
+        if (kartStatus.GetKartMode() == KartMode.Hovercraft)
+            kartStatus.SetKartMode(KartMode.Kart);
         else
-        {
-            rigidbody.useGravity = true;
-            GeomController.SwitchToKartMode();
-        }
+            kartStatus.SetKartMode(KartMode.Hovercraft);
     }
 
     void HoverMode()
@@ -329,6 +281,7 @@ public class KartController : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD:KoalaKarts/Assets/Scripts/KartController.cs
    public void UseItem()
     {
         switch (currentItem)
@@ -408,22 +361,13 @@ public class KartController : MonoBehaviour
         Destroy(transform.Find("Shield").gameObject);
     }
 
+=======
+>>>>>>> origin/master:KoalaKarts/Assets/Scripts/Kart Scripts/KartController.cs
     void Die()
     {
         Application.LoadLevel("Menus");
     }
 
-    void AddItem(Item item)
-    {
-        if (item == Item.Leaf)
-        {
-            kartStatus.AddLeaf();
-        }
-        else if(currentItem == Item.NULL)
-        {
-            currentItem = item;
-        }
-    }
 
     void OnCollisionEnter(Collision col)
     {
@@ -445,48 +389,5 @@ public class KartController : MonoBehaviour
     {
         if (col.gameObject.tag == "Kart")
             rigidbody.constraints = RigidbodyConstraints.None;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Mine")
-        {
-            if (!shieldEnabled && !hoverEnabled)
-            {
-                Instantiate(Explosion, other.transform.position, other.transform.rotation);
-                rigidbody.AddExplosionForce(500000.0f, other.transform.position, 30.0f, 5.0f);
-                rigidbody.AddTorque(Vector3.up * 10000000.0f);
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name == "Health Leaf")
-        {
-            Destroy(other.gameObject);
-            kartStatus.AddLeaf();
-            healthPickupAudio.Play();
-        }
-
-        if (other.gameObject.name == "Mine")
-        {
-            Destroy(other.gameObject);
-            kartStatus.Hit();
-        }
-
-        /*if (other.gameObject.name == "SpeedBoost")
-        {
-            Destroy(other.gameObject);
-            AddItem(Item.SpeedBoost);
-        }*/
-
-		if (other.GetComponent<ItemSpawner>())
-		{
-			Item item = (Item) other.GetComponent<ItemSpawner>().GetItem();
-			other.GetComponent<ItemSpawner>().PickUp();
-            shieldPickupAudio.Play();
-			AddItem(item);
-		}
     }
 }

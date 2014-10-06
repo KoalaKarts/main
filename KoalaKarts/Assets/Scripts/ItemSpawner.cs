@@ -3,17 +3,6 @@ using System.Collections;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public enum Item
-    {
-        NULL,
-        Leaf,
-        Rocket,
-        RangARang,
-        SpeedBoost,
-        Mine,
-        Shield,
-    }
-
     public bool healthSpawner = false;
 
     public float spawnTime = 10;
@@ -22,6 +11,7 @@ public class ItemSpawner : MonoBehaviour
 
     public GameObject itemRocket;
     public GameObject itemRangARang;
+    public GameObject itemCaltrops;
     public GameObject itemSpeedBoost;
     public GameObject itemMine;
     public GameObject itemShield;
@@ -82,7 +72,7 @@ public class ItemSpawner : MonoBehaviour
                 break;
             case Item.Rocket:
                 currentItem = Item.Rocket;
-				obj = (GameObject) Instantiate(itemRocket, transform.position, transform.rotation);
+				obj = (GameObject)Instantiate(itemRocket, transform.position, transform.rotation);
 				obj.transform.parent = transform;
 				obj.name = "RocketItem";
                 break;
@@ -92,21 +82,27 @@ public class ItemSpawner : MonoBehaviour
                 obj.transform.parent = transform;
                 obj.name = "RangARangItem";
                 break;
+            case Item.Caltrops:
+                currentItem = Item.Caltrops;
+                obj = (GameObject)Instantiate(itemCaltrops, transform.position, transform.rotation);
+                obj.transform.parent = transform;
+                obj.name = "CaltropsItem";
+                break;
             case Item.SpeedBoost:
                 currentItem = Item.SpeedBoost;
-				obj = (GameObject) Instantiate(itemSpeedBoost, transform.position, transform.rotation);
+				obj = (GameObject)Instantiate(itemSpeedBoost, transform.position, transform.rotation);
 				obj.transform.parent = transform;
 				obj.name = "SpeedBoostItem";
                 break;
             case Item.Mine:
                 currentItem = Item.Mine;
-                obj = (GameObject) Instantiate(itemMine, transform.position, transform.rotation);
+                obj = (GameObject)Instantiate(itemMine, transform.position, transform.rotation);
 				obj.transform.parent = transform;
 				obj.name = "MineItem";
                 break;
             case Item.Shield:
                 currentItem = Item.Shield;
-				obj = (GameObject) Instantiate(itemShield, transform.position, transform.rotation);
+				obj = (GameObject)Instantiate(itemShield, transform.position, transform.rotation);
 				obj.transform.parent = transform;
 				obj.name = "ShieldItem";
                 break;

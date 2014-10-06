@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
     {
         if (col.gameObject.name == "PlayerOneKart" || col.gameObject.name == "PlayerTwoKart")
         {
-            KartController kart = col.gameObject.GetComponent<KartController>();
+            KartItemsController kart = col.gameObject.GetComponent<KartItemsController>();
             ContactPoint contact = col.contacts[0];
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
