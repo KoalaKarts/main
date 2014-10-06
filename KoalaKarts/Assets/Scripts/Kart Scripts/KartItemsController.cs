@@ -12,6 +12,7 @@ public class KartItemsController : MonoBehaviour
     public Transform MineSpawnPoint;
     public GameObject RangARang;
 	public GameObject Rocket;
+    public GameObject Caltrops;
     public GameObject Mine;
     public GameObject Shield;
     public GameObject Explosion;
@@ -58,6 +59,9 @@ public class KartItemsController : MonoBehaviour
                 break;
             case Item.RangARang:
                 ShootItem();
+                break;
+            case Item.Caltrops:
+                PlaceCaltrops();
                 break;
             case Item.Rocket:
 				ShootItem();
@@ -112,6 +116,12 @@ public class KartItemsController : MonoBehaviour
     {
         Object mine = Instantiate(Mine, MineSpawnPoint.transform.position, MineSpawnPoint.transform.rotation);
         mine.name = "Mine";
+    }
+
+    void PlaceCaltrops()
+    {
+        Object caltrops = Instantiate(Caltrops, MineSpawnPoint.transform.position, MineSpawnPoint.transform.rotation);
+        caltrops.name = "Caltrops";
     }
 
     void DeployShield()
