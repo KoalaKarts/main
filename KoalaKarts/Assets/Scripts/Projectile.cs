@@ -27,7 +27,8 @@ public class Projectile : MonoBehaviour
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
             Instantiate(Explosion, pos, rot);
-            if (!kart.shieldEnabled)
+            //if (!kart.shieldEnabled)
+            if(false)
             {
                 kart.kartStatus.Hit();
                 col.rigidbody.AddExplosionForce(500000.0f, contact.point, 10.0f, 10000.0f);

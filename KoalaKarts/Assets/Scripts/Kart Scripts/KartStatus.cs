@@ -20,6 +20,8 @@ public class KartStatus : MonoBehaviour
     private float respawnTime = 2;
     private bool respawning = false;
 
+    private KartMode KartMode = KartMode.Kart;
+
     #region Initialization & Update
 
     /// <summary>
@@ -97,6 +99,16 @@ public class KartStatus : MonoBehaviour
     public int GetCurrentPoints()
     {
         return currentPoints;
+    }
+
+    public KartMode GetKartMode()
+    {
+        return KartMode;
+    }
+
+    public void SetKartMode(KartMode kartMode)
+    {
+        KartMode = kartMode;
     }
 
     #endregion
