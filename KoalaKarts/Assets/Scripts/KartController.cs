@@ -12,14 +12,7 @@ public class KartController : MonoBehaviour
         public WheelCollider FL, FR, RL, RR;
     }
 
-    [System.Serializable]
-    public class WheelGeometry
-    {
-        public Transform FL, FR, RL, RR;
-    }
-
     public WheelColliders Colliders;
-    public WheelGeometry Geometry;
 
     //public int lives = 3;
     //public int maxLives = 5;
@@ -79,7 +72,10 @@ public class KartController : MonoBehaviour
     public AudioSource shieldPickupAudio;
     public AudioSource speedBoostAudio;
 
+    [System.NonSerialized]
     public KartStatus kartStatus;
+    [System.NonSerialized]
+    public KartWheelGeomController GeomController;
 
     public enum Item
     {
@@ -99,6 +95,7 @@ public class KartController : MonoBehaviour
         rigidbody.centerOfMass = new Vector3(0, -1f, 0);
         SetValues();
         kartStatus = GetComponent<KartStatus>();
+        GeomController = GetComponent<KartWheelGeomController>();
 	}
 
     void OnGUI()
@@ -256,17 +253,8 @@ public class KartController : MonoBehaviour
 
         if (!hoverEnabled)
         {
-            Geometry.FL.Rotate(0, Colliders.FL.rpm / 60 * 360 * Time.deltaTime, 0);
-            Geometry.FR.Rotate(0, Colliders.FR.rpm / 60 * 360 * Time.deltaTime, 0);
-            Geometry.RL.Rotate(0, Colliders.RL.rpm / 60 * -360 * Time.deltaTime, 0);
-            Geometry.RR.Rotate(0, Colliders.RR.rpm / 60 * -360 * Time.deltaTime, 0);
-
-            Vector3 wheelFLTransAngle = Geometry.FL.localEulerAngles;
-            Vector3 wheelFRTransAngle = Geometry.FR.localEulerAngles;
-            wheelFLTransAngle.y = Colliders.FL.steerAngle + 90 - Geometry.FL.localEulerAngles.z;
-            wheelFRTransAngle.y = Colliders.FR.steerAngle + 90 - Geometry.FR.localEulerAngles.z;
-            Geometry.FL.localEulerAngles = wheelFLTransAngle;
-            Geometry.FR.localEulerAngles = wheelFRTransAngle;
+            GeomController.SpinWheels(Colliders.FR.rpm / 60 * 360 * Time.deltaTime);
+            GeomController.TurnFrontWheels(Colliders.FL.steerAngle, Colliders.FR.steerAngle);
         }
 
         if (rigidbody.velocity == Vector3.zero)
@@ -294,27 +282,17 @@ public class KartController : MonoBehaviour
 
     void ToggleHoverMode()
     {
-        Vector3 origAngle = new Vector3(90, 270, 0);
-        Vector3 newLAngle = new Vector3(180, 270, 0);
-        Vector3 newRAngle = new Vector3(0, 270, 0);
-
         hoverEnabled = !hoverEnabled;
 
         if (hoverEnabled)
         {
             rigidbody.useGravity = false;
-            Geometry.FL.localEulerAngles = newLAngle;
-            Geometry.FR.localEulerAngles = newRAngle;
-            Geometry.RL.localEulerAngles = newLAngle;
-            Geometry.RR.localEulerAngles = newRAngle;
+            GeomController.SwitchToHovercraftMode();
         }
         else
         {
             rigidbody.useGravity = true;
-            Geometry.FL.localEulerAngles = origAngle;
-            Geometry.FR.localEulerAngles = origAngle;
-            Geometry.RL.localEulerAngles = origAngle;
-            Geometry.RR.localEulerAngles = origAngle;
+            GeomController.SwitchToKartMode();
         }
     }
 
