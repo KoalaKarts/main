@@ -84,6 +84,19 @@ ModelImporter:
     4300020: Outside_Tower2
     4300022: Outside_Tower1
     4300024: Outside_Tower4
+    6400000: BuildingRooftop
+    6400002: CentralBuilding
+    6400004: CentralEdge
+    6400006: CentralEdge3
+    6400008: CentralEdge4
+    6400010: CentralEdge5
+    6400012: CityGround
+    6400014: Outside_Tower1
+    6400016: Outside_Tower2
+    6400018: Outside_Tower3
+    6400020: Outside_Tower4
+    6400022: SkyBridge
+    6400024: SkyBridge1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -106,7 +119,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

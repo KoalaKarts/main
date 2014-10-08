@@ -854,6 +854,7 @@ GameObject:
   - 4: {fileID: 230819539}
   - 33: {fileID: 230819541}
   - 23: {fileID: 230819540}
+  - 64: {fileID: 230819542}
   m_Layer: 0
   m_Name: CityGround
   m_TagString: Untagged
@@ -901,6 +902,20 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 230819538}
+  m_Mesh: {fileID: 4300000, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &230819542
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400012, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
+  m_GameObject: {fileID: 230819538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
 --- !u!1001 &265064352
 Prefab:
@@ -1632,6 +1647,7 @@ GameObject:
   - 4: {fileID: 430662130}
   - 33: {fileID: 430662132}
   - 23: {fileID: 430662131}
+  - 64: {fileID: 430662134}
   - 64: {fileID: 430662133}
   m_Layer: 0
   m_Name: Outside_Tower4
@@ -1686,6 +1702,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 430662129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300024, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &430662134
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400020, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 430662129}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1908,6 +1938,7 @@ GameObject:
   - 4: {fileID: 463198487}
   - 33: {fileID: 463198489}
   - 23: {fileID: 463198488}
+  - 64: {fileID: 463198491}
   - 64: {fileID: 463198490}
   m_Layer: 0
   m_Name: Outside_Tower1
@@ -1962,6 +1993,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 463198486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300022, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &463198491
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400014, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 463198486}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2179,6 +2224,7 @@ GameObject:
   - 4: {fileID: 535345623}
   - 33: {fileID: 535345625}
   - 23: {fileID: 535345624}
+  - 64: {fileID: 535345627}
   - 64: {fileID: 535345626}
   m_Layer: 0
   m_Name: SkyBridge1
@@ -2241,6 +2287,20 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300004, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &535345627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400024, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
+  m_GameObject: {fileID: 535345622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300004, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
 --- !u!1 &538389644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2311,7 @@ GameObject:
   - 4: {fileID: 538389645}
   - 33: {fileID: 538389647}
   - 23: {fileID: 538389646}
+  - 64: {fileID: 538389649}
   - 64: {fileID: 538389648}
   m_Layer: 0
   m_Name: Outside_Tower2
@@ -2305,6 +2366,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538389644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300020, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &538389649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400016, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 538389644}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2695,6 +2770,7 @@ GameObject:
   - 4: {fileID: 743029968}
   - 33: {fileID: 743029970}
   - 23: {fileID: 743029969}
+  - 64: {fileID: 743029972}
   - 64: {fileID: 743029971}
   m_Layer: 0
   m_Name: CentralEdge3
@@ -2749,6 +2825,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743029967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300016, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &743029972
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400006, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 743029967}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2970,6 +3060,7 @@ GameObject:
   - 4: {fileID: 821057698}
   - 33: {fileID: 821057700}
   - 23: {fileID: 821057699}
+  - 64: {fileID: 821057702}
   - 64: {fileID: 821057701}
   m_Layer: 0
   m_Name: CentralEdge5
@@ -3024,6 +3115,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821057697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300012, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &821057702
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400010, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 821057697}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -3757,6 +3862,7 @@ GameObject:
   - 4: {fileID: 1048175589}
   - 33: {fileID: 1048175591}
   - 23: {fileID: 1048175590}
+  - 64: {fileID: 1048175593}
   - 64: {fileID: 1048175592}
   m_Layer: 0
   m_Name: CentralEdge
@@ -3819,6 +3925,20 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1048175593
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400004, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
+  m_GameObject: {fileID: 1048175588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300014, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
 --- !u!1 &1088128502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +3980,7 @@ GameObject:
   - 4: {fileID: 1094907244}
   - 33: {fileID: 1094907246}
   - 23: {fileID: 1094907245}
+  - 64: {fileID: 1094907248}
   - 64: {fileID: 1094907247}
   m_Layer: 0
   m_Name: CentralBuilding
@@ -3914,6 +4035,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094907243}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300008, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1094907248
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400002, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 1094907243}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5072,6 +5207,7 @@ GameObject:
   - 4: {fileID: 1276918820}
   - 33: {fileID: 1276918822}
   - 23: {fileID: 1276918821}
+  - 64: {fileID: 1276918824}
   - 64: {fileID: 1276918823}
   m_Layer: 0
   m_Name: CentralEdge4
@@ -5126,6 +5262,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276918819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300010, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1276918824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400008, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 1276918819}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5358,7 +5508,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397069356}
   m_LocalRotation: {x: 0, y: -8.14790795e-08, z: 0, w: 1}
-  m_LocalPosition: {x: 8.99383667e-06, y: 4.64237213, z: -8.00000668}
+  m_LocalPosition: {x: 1.06234147e-05, y: 2.53611374, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671151624}
@@ -5943,6 +6093,7 @@ GameObject:
   - 4: {fileID: 1546282790}
   - 33: {fileID: 1546282792}
   - 23: {fileID: 1546282791}
+  - 64: {fileID: 1546282794}
   - 64: {fileID: 1546282793}
   m_Layer: 0
   m_Name: BuildingRooftop
@@ -5997,6 +6148,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546282789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1546282794
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400000, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 1546282789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -6073,6 +6238,7 @@ GameObject:
   - 4: {fileID: 1571438366}
   - 33: {fileID: 1571438368}
   - 23: {fileID: 1571438367}
+  - 64: {fileID: 1571438370}
   - 64: {fileID: 1571438369}
   m_Layer: 0
   m_Name: Outside_Tower3
@@ -6127,6 +6293,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571438365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300018, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1571438370
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400018, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 1571438365}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -6942,7 +7122,7 @@ MonoBehaviour:
   shieldPickupAudio: {fileID: 1671151636}
   speedBoostAudio: {fileID: 1671151635}
   kartStatus: {fileID: 0}
-  CurrentItem: 0
+  CurrentItem: 4
 --- !u!1 &1687053729
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,6 +8308,7 @@ GameObject:
   - 4: {fileID: 1990753353}
   - 33: {fileID: 1990753355}
   - 23: {fileID: 1990753354}
+  - 64: {fileID: 1990753357}
   - 64: {fileID: 1990753356}
   m_Layer: 0
   m_Name: SkyBridge
@@ -8182,6 +8363,20 @@ MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990753352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: c97fbab066a2eac4b9f3e814f40666df, type: 3}
+--- !u!64 &1990753357
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6400022, guid: c97fbab066a2eac4b9f3e814f40666df,
+    type: 3}
+  m_PrefabInternal: {fileID: 1274894758}
   m_GameObject: {fileID: 1990753352}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
