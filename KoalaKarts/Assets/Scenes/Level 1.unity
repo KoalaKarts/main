@@ -3608,56 +3608,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 980560225}
   m_Mesh: {fileID: 4300000, guid: a8c818c1e91d18e4e81cce5854bc0a57, type: 3}
-<<<<<<< HEAD
---- !u!1 &994879625
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
-  m_PrefabInternal: {fileID: 112671135}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 994879626}
-  - 95: {fileID: 994879627}
-  m_Layer: 0
-  m_Name: Koala
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &994879626
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
-  m_PrefabInternal: {fileID: 112671135}
-  m_GameObject: {fileID: 994879625}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.63253429e-08, y: 5.28833771, z: 9.17794551e-09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1183121714}
-  - {fileID: 1531159722}
-  - {fileID: 1556468762}
-  m_Father: {fileID: 1671151624}
-  m_RootOrder: 3
---- !u!95 &994879627
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: a09802b534ed81d43988f31b9bb4733d,
-    type: 3}
-  m_PrefabInternal: {fileID: 112671135}
-  m_GameObject: {fileID: 994879625}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-=======
->>>>>>> origin/master
 --- !u!1 &1018765670
 GameObject:
   m_ObjectHideFlags: 0

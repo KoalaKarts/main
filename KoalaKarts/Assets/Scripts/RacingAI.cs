@@ -75,7 +75,7 @@ public class RacingAI : MonoBehaviour {
 	}
 
 	void Update () {
-		if(transform.position < -200){
+		if(transform.position.y < -200){
 			respawn.Respawn ();
 		}
 
@@ -155,7 +155,7 @@ public class RacingAI : MonoBehaviour {
 	}
 
 	void useWeapon(){
-		itemAI.GetComponent<KartController> ().UseItem ();
+		itemAI.GetComponent<KartItemsController> ().UseItem ();
 		hasWeapon = false;
 	}
 
