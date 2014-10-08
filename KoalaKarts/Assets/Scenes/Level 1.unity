@@ -3713,6 +3713,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 980560225}
   m_Mesh: {fileID: 4300000, guid: a8c818c1e91d18e4e81cce5854bc0a57, type: 3}
+<<<<<<< HEAD
+--- !u!1 &994879625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
+  m_PrefabInternal: {fileID: 112671135}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 994879626}
+  - 95: {fileID: 994879627}
+  m_Layer: 0
+  m_Name: Koala
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &994879626
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
+  m_PrefabInternal: {fileID: 112671135}
+  m_GameObject: {fileID: 994879625}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.63253429e-08, y: 5.28833771, z: 9.17794551e-09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1183121714}
+  - {fileID: 1531159722}
+  - {fileID: 1556468762}
+  m_Father: {fileID: 1671151624}
+  m_RootOrder: 3
+--- !u!95 &994879627
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: a09802b534ed81d43988f31b9bb4733d,
+    type: 3}
+  m_PrefabInternal: {fileID: 112671135}
+  m_GameObject: {fileID: 994879625}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a09802b534ed81d43988f31b9bb4733d, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+=======
+>>>>>>> origin/master
 --- !u!1 &1018765670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,8 +3794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66dd7e20b6beeb84491f6131a84703de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ks: {fileID: 0}
-  kc: {fileID: 0}
+  respawn: {fileID: 0}
+  itemAI: {fileID: 0}
   nodeArr:
   - {fileID: 1996345375}
   - {fileID: 27009466}
@@ -3783,6 +3833,9 @@ MonoBehaviour:
   self: {fileID: 0}
   speed: 5
   hoverMode: 0
+  respawning: 0
+  respawnTimer: 0
+  respawnTime: 2
   fovRange: 5
   startAngle: {x: -0, y: -.5, z: -0, w: .866025388}
   endAngle: {x: 0, y: .0436193906, z: 0, w: .999048233}
@@ -4129,8 +4182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66dd7e20b6beeb84491f6131a84703de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ks: {fileID: 0}
-  kc: {fileID: 0}
+  respawn: {fileID: 0}
+  itemAI: {fileID: 0}
   nodeArr:
   - {fileID: 1996345375}
   - {fileID: 27009466}
@@ -4168,6 +4221,9 @@ MonoBehaviour:
   self: {fileID: 0}
   speed: .200000003
   hoverMode: 0
+  respawning: 0
+  respawnTimer: 0
+  respawnTime: 2
   fovRange: 10
   startAngle: {x: -0, y: -.5, z: -0, w: .866025388}
   endAngle: {x: 0, y: .0436193906, z: 0, w: .999048233}
@@ -8449,7 +8505,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996345371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 773.735596, y: 81.776947, z: -371.700165}
+  m_LocalPosition: {x: 819.278748, y: 26.3311844, z: -355.556122}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 612413454}
