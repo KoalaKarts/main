@@ -5364,7 +5364,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397069356}
   m_LocalRotation: {x: 0, y: -8.14790795e-08, z: 0, w: 1}
-  m_LocalPosition: {x: 8.99383667e-06, y: 4.64237213, z: -8.00000668}
+  m_LocalPosition: {x: 4.75104162e-06, y: .824146271, z: -11.6184053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671151624}
@@ -6493,7 +6493,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1671151623}
   m_LocalRotation: {x: 8.16132439e-10, y: .836665869, z: 1.57142821e-09, w: .547713757}
-  m_LocalPosition: {x: 325.965607, y: 47.6910858, z: -191.550461}
+  m_LocalPosition: {x: 325.965607, y: 39.3569565, z: -191.550461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1169395184}
@@ -6948,7 +6948,7 @@ MonoBehaviour:
   shieldPickupAudio: {fileID: 1671151636}
   speedBoostAudio: {fileID: 1671151635}
   kartStatus: {fileID: 0}
-  CurrentItem: 0
+  CurrentItem: 4
 --- !u!1 &1687053729
 GameObject:
   m_ObjectHideFlags: 0
@@ -7406,8 +7406,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763334564}
-  m_LocalRotation: {x: .149716973, y: 0, z: 0, w: .98872894}
-  m_LocalPosition: {x: 477, y: 13.3653011, z: 399.408173}
+  m_LocalRotation: {x: .0100316918, y: .847236931, z: .016009707, w: .5308792}
+  m_LocalPosition: {x: 310.325104, y: 45.888813, z: -182.164688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1783119946}

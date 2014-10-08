@@ -11,6 +11,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Caltrops
   m_TagString: Untagged
@@ -1307,7 +1308,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1330,7 +1331,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: .200000003, z: 7}
+  m_Size: {x: 7, y: .300000012, z: 7}
   m_Center: {x: 0, y: -.400000006, z: 0}
 --- !u!95 &9500000
 Animator:
@@ -1347,6 +1348,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cee51d1c2259ab4da5e47762d057582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
